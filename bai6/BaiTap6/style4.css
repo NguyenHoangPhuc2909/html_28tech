@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  margin: 0;
+}
+
+.container {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .news-letter {
+  padding: 100px 50px;
+  background-color: #eff1ff;
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container .news-letter .content {
+  width: 50%;
+}
+
+.container .news-letter::before {
+  content: "";
+  position: absolute;
+  background: url(images/dots.svg);
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.container .news-letter .content .sub-title {
+  text-transform: uppercase;
+  background-color: #e8dffc;
+  color: #b966e7;
+  font-size: 13px;
+  border-radius: 45px;
+  padding: 10px 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.container .news-letter .content .title {
+  color: #192335;
+  font-size: 38px;
+  text-transform: capitalize;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.container .news-letter .content .description {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #6b7385;
+  font-size: 16px;
+}
+
+.container .news-letter .form {
+  width: 45%;
+  background-color: #ffffff;
+  border: 2px solid #eeeeee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+
+.container .news-letter .form input {
+  flex: 1;
+  outline: none;
+  background-color: #ffffff;
+  padding: 0 10px;
+  border: 0;
+  font-size: 14px;
+  color: #6b7385;
+  height: 50px;
+}
+
+.container .news-letter .form button {
+  background-color: #b966e7;
+  color: #ffffff;
+  border: 0;
+  border-radius: 12px;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.news-letter .form button:hover {
+  background-color: #a04ecd;
+}
+
+.news-letter .form button i {
+  margin-left: 5px;
+}

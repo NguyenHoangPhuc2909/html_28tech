@@ -1,0 +1,76 @@
+p,
+#the02,
+.the03 {
+  background-color: rgb(58, 238, 58);
+}
+* {
+  text-align: center;
+}
+h1 {
+  color: red;
+  text-align: right;
+}
+h1 {
+  color: #00ffff;
+}
+p {
+  font-size: 20px;
+}
+#the02 {
+  color: blue;
+}
+.the03 {
+  color: chocolate;
+}
+.background-image {
+  /* background-image: url(image/anh1.jpg), url(image/anh2.jpg); */
+  /* background-image: linear-gradient(360deg, #000000, #ffffff); */
+  background-image: url(image/anh1.jpg);
+  background-size: cover;
+  width: 1000px;
+  height: 1200px;
+}
+/* Nếu trùng bộ chọn và thuộc tính thì giá trị bộ chọn cuối cùng được sử dụng (ví dụ thẻ h1) */
+/* Dùng mã HEX để thêm màu sắc */
+
+/* Các thuộc tính cho element: 
+        - background-color: nền là màu sắc
+        - background-clip: xác định phạm vi được thiết lập màu nền của phần tử (Áp dụng cho background là MÀU SẮC)
+              + border-box: thuộc tính mặc định, đổ màu từ content cho đến hết border.
+              + padding-box: đổ màu từ content đến hết padding
+              + content-box: đổ màu phần content
+        - background-image: nền là hình ảnh hoặc màu grandient
+              + Có thể là kiểu grandient: Tạo ra một dải màu chuyển đổi từ màu này đến màu khác.
+                    Ví dụ: background-image: linear-gradient(180deg, #000000, #ffffff);
+              + Kết hợp grandient + hình ảnh: 
+                    Ví dụ: background-image: linear-gradient(180deg, #00000080, #ffffffad), url("hinh-anh.jpg");
+        - background-size: Kích thước của background
+              + Có thể là đơn vị: (px, %, auto)
+              + contain: sẽ co dãn hình ảnh để hình ảnh nằm trong khung element, hình ảnh sẽ không bị vỡ.
+              + cover: sẽ kéo dãn hình ảnh để hình ảnh vừa với khung element, cắt bỏ những phần bị dư thừa, ảnh không vỡ.
+        - background-repeat: nền được lặp lại hay không?
+              + background-repeat: no-repeat (không lặp)
+              + background-repeat: repeat-x  (lặp theo trục ngang)
+              + background-repeat: repeat-y  (lặp theo trục dọc)
+        - background-position: vị trí của hình ảnh so với element. Có các giá trị: top, left, right, bottom, center.
+                  Ví dụ:
+                  background-position: top left; // trên - trái
+                  background-position: top right; // trên - phải
+                  background-position: top center; // trên - giữa
+                  background-position: bottom left; // dưới - trái
+                  background-position: bottom right; // dưới - phải
+                  background-position: bottom 30px right 20px; // cách dưới 30px - cách phải 20px
+        - background-attachment: nền sẽ được cuộn hoặc cố định.
+                  Ví dụ: background-attachment: fixed;
+        - background-origin: giống như background-clip, background-clip áp dụng cho background là màu sắc,
+        background-origin áp dụng cho background là HÌNH ẢNH.
+              + border-box: background chiếm phần content, padding và border
+              + padding-box: background chiếm phần content, padding
+              + content-box: background chỉ chiếm phần content
+        - background (cách viết ngắn):
+                  Ví dụ:
+                  background: #ffffff url("hinh-anh.png") no-repeat top right;
+        - box-sizing: xác định kích thước tổng thể (height, width) của element
+              + content-box: (mặc định)
+              + border-box: (nên dùng)  => height content = tổng heigth - border - padding
+                  */

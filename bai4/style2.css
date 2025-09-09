@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.red-color {
+  color: red;
+}
+
+#green-color {
+  color: green;
+}
+
+.div01 {
+  background-color: rgb(5, 84, 5);
+  width: 200px;
+  height: 100px;
+}
+
+.div02 {
+  background-image: url(image/anh1.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  background-attachment: fixed;
+  text-transform: capitalize;
+  text-align: center;
+  color: white;
+}
+
+.box1 {
+  font-family: "Roboto", sans-serif;
+  border: 10px solid black;
+  padding: 25px;
+  text-align: center;
+  background-color: green;
+  color: white;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.box2 {
+  font-style: italic;
+  font-family: "Fraunces", serif;
+  border: 5px dashed #cbcdcc;
+  padding: 25px 50px;
+  text-align: left;
+  background-color: orangered;
+  text-transform: uppercase;
+}
+
+.cau4 {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+}

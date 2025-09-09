@@ -1,0 +1,63 @@
+/* .element-parent {
+    border: 3px solid #c30000;
+}
+
+.element-child {
+    text-align: center;
+}
+
+.elementA {
+    background-color: green;
+    font-size: 20px;
+    padding: 20px;
+    float: left;
+}
+
+.elementB {
+    height: 150px;
+    background-color: blue;
+    float: right
+}
+
+.elementC {
+    height: 200px;
+    background-color: yellow;
+    float: right;
+}
+
+.clear-both {
+    clear: both;
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: #CCCCCC;
+    margin: 5px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-family: Arial;
+}
+
+.sidebar1 {
+    width: 25%;
+    float: left;
+}
+
+.article {
+    width: calc(50% - 30px);
+    float: left;
+}
+
+.sidebar2 {
+    width: 25%;
+    float: right;
+}
+
+.fix-box {
+    clear: both;
+}

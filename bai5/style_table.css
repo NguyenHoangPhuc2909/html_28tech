@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+.div_table .table {
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.div_table .table th, .div_table .table td{
+    border-bottom: 1px solid green;
+    padding: 10px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;;
+}
+
+.div_table .table th {
+    color: white;
+    background-color: green;
+}
+
+.div_table .table tbody tr:hover {
+    background-color: #51cf66;
+    color: white;
+}
+
+.div_table .table tbody tr:active {
+    background-color: #40c057;
+    color: white;
+    cursor: pointer;
+}

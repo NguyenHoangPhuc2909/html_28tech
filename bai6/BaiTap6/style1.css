@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    --background-color: #faf9ff;
+}
+
+.section {
+    background-color: var(--background-color);
+    padding: 80px 0;
+}
+
+.section .container {
+    width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section .container .title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: 0;
+    color: #192335;
+}
+
+.section .container .list {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+}
+
+.section .container .list .item {
+    width: 25%;
+    padding: 30px;
+    border: 1px solid #ddd;
+}
+
+.item img {
+    width: 100%;
+    height: 30px;
+    object-fit: contain;
+}

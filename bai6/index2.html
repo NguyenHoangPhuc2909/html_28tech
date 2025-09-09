@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* a[target] {
+            background-color: yellow;
+        } */
+
+        a[target="_blank"] {
+            background-color: blueviolet;
+        }
+        
+        a[title="28 Tech"] {
+            background-color: aqua;
+        }
+
+        a[title~="Facebook"]{
+            font-size: 20px;
+        }
+
+        /* p[class|="top"] {
+            background-color: yellow;
+        } */
+
+        /* p[class^="top"] {
+            background-color: yellow;
+        } */
+
+        /* p[class$="top"] {
+            background-color: rgb(144, 0, 255);
+        } */
+
+        p[class*="header"] {
+            background-color: rgb(144, 0, 255);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="https://www.facebook.com/hoangphuc.nguyen.00" title="web Facebook" target="_self">Facebook</a>
+        <a href="https://www.youtube.com/watch?v=22KN4eBemJg" title="Youtube" target="_blank">Youtube</a>
+        <a href="https://www.28tech.com.vn/" title="28 Tech">28 Tech</a>
+        <a href="https://mail.google.com/mail/u/0/?pc=carousel-about-en#inbox" title="E-Mail">Mail</a>
+    </div>
+    
+    <p class="top-header test">Nội dung 1</p>
+    <p class="top- header test">Nội dung 2</p>
+    <p class="topheader">Nội dung 3</p>
+    <p class="top">Nội dung 4</p>
+    <p class="top test">Nội dung 5</p>
+    <p class="top_test">Nội dung 6</p>
+    <p class="test_top">Nội dung 7</p>
+    
+</body>
+</html>

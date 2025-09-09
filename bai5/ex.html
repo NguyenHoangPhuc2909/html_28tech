@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Min/Max Width Demo</title>
+    <style>
+      .box {
+        background-color: lightblue;
+        padding: 10px;
+        margin: 10px 0;
+        color: black;
+      }
+
+      .fixed {
+        width: 200px;
+      }
+
+      .min {
+        width: 100px;
+        min-width: 200px;
+      }
+
+      .max {
+        width: 400px;
+        max-width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Box có width cố định (200px)</h2>
+    <div class="box fixed">.fixed → width: 200px</div>
+
+    <h2>Box có min-width lớn hơn width</h2>
+    <div class="box min">.min → width: 100px; min-width: 200px</div>
+
+    <h2>Box có max-width nhỏ hơn width</h2>
+    <div class="box max">.max → width: 400px; max-width: 250px</div>
+  </body>
+</html>

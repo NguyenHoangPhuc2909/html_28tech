@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        background-color: blue;
+        color: white;
+        font-size: 50px;
+      }
+
+      @media screen and (max-width: 1024px) {
+        h1 {
+          color: #86f686;
+          font-size: 30px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        h1 {
+          color: red;
+          font-size: 20px;
+          font-style: italic;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        h1 {
+            background-color: #86f686;
+            font-size: 20px;
+        }
+      }
+
+      @media screen and (max-width: 320px){
+        h1 {
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+  </body>
+</html>

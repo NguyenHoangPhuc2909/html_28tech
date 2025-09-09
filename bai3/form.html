@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="https://www.w3schools.com/html/html_forms.asp"
+      target="_blank"
+      method="post"
+      autocomplete="on"
+    >
+      <!--  <label for="fullname">Họ tên</label>
+      <input id="fullname" name="ho_ten" type="text" />
+
+      <label for="">Màu sắc:</label>
+      <select name="mau_sac" id="" size="">
+        <option value="yellow">Màu vàng</option>
+        <option value="red" selected>Màu đỏ</option>
+        <option value="blue">Màu lam</option>
+        <input type="submit" value="Gửi" />
+      </select>
+      -->
+      <textarea name="note" id="" cols="20" rows="5" required></textarea>
+
+      <br />
+      <input type="email" name="email" id="" />
+      <br />
+      <input type="password" name="matkhau" id="" />
+      <br />
+      <input type="number" name="so" id="" />
+      <br />
+      <input type="date" name="ngay" id="" />
+      <br />
+      <input type="time" name="" id="" />
+      <br />
+      <input type="datetime" name="" id="" />
+      <br />
+      <input type="datetime-local" name="" id="" />
+      <br />
+      <input type="file" name="" id="" />
+      <br />
+      <input type="checkbox" name="" id="" />
+      <br />
+      <br />
+
+      <!--id của input == for của label, các checkbox cùng name-->
+      <input type="checkbox" name="language" id="NgonNguC" value="C" />
+      <label for="NgonNguC">Lập trình C</label>
+
+      <input type="checkbox" name="language" id="NgonNguJava" value="Java" />
+      <label for="NgonNguJava">Lập trình Java</label>
+
+      <input type="checkbox" name="language" id="NgonNgu.Net" value="Net" />
+      <label for="NgonNgu.Net">Lập trình .Net</label>
+      <br />
+
+      <!--radio tương tự với checkbox nhưng chỉ được chọn 1 đáp án-->
+      <input type="radio" name="" id="" value="" />
+      
+      <input type="range" name="volume" id="" step="5" min="" max="" />
+      <br />
+      <input type="text" name="ho_ten" id="" value="HoangPhuc123" readonly />
+      <br />
+      <input
+        type="text"
+        name="email"
+        id=""
+        value="phucqaqs@gmail.com"
+        disabled
+      />
+      <br />
+      <input
+        type="text"
+        name="van_ban"
+        placeholder="Xin chào"
+        id=""
+        maxlength="10"
+        required
+      />
+      <br />
+      <input type="number" name="so_luong" id="" min="1" max="10" />
+      <br />
+      <button>Gửi</button>
+    </form>
+  </body>
+</html>

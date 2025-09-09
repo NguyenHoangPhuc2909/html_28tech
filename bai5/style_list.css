@@ -1,0 +1,43 @@
+.list li {
+  border: 1px solid #d8dee9;
+  list-style-type: none;
+  width: 200px;
+  height: 40px;
+  line-height: 40px; 
+  background-color: #eceff4;
+  text-align: center;
+  margin-left: 0;
+  cursor: pointer;
+}
+
+.list li:hover {
+  background-color: rgb(0, 72, 255);
+}
+
+.list li:active {
+  background-color: rgb(0, 123, 255);
+  color: white;
+}
+
+.icon i {
+  font-size: 16px;
+  border: 1px solid #d8dee9;
+  margin: 0 10px;
+  background-color: #eceff4;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  color: blue;
+}
+
+.icon i:hover {
+  background-color: #d8dee9;
+}
+
+.icon i:active {
+  background-color: #c5f6fa;
+}

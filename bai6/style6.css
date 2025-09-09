@@ -1,0 +1,29 @@
+:root {
+    --color-one: #d80202;
+    --color-two: rgb(19, 255, 19);
+}
+h2 {
+  color: var(--color-one);
+}
+
+p {
+  color: var(--color-one);
+}
+
+h3 {
+  --local-color: #0000ff;
+  color: var(--local-color);
+}
+
+h4 {
+  color: var(--local-color);
+}
+
+.box {
+  background-color: gray;
+  width: 200px;
+  height: 100px;
+  padding: 30px;
+  border: 2px solid #0000ff;
+  box-sizing: border-box;
+}

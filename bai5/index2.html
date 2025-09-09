@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+    <style>
+      /* div + h2 {
+            color: red;;
+        } 
+
+      div ~ p {
+        color: blue;
+      } */
+
+      /* div > p {
+        color: blue;
+      } */
+
+      /* div p {
+        color: orangered;
+      } */
+      .parent .child h4{
+        color: red;
+       }
+
+       .parent > h4 {
+        background-color: red;
+       }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis unde
+      asperiores molestias nam sint assumenda maxime architecto quasi
+      praesentium dolore iure accusamus possimus, libero rerum et optio?
+      Possimus, mollitia voluptates.
+    </div>
+
+    <p>Nội dung 01</p>
+    <div>
+      <p>Nội dung 02</p>
+      <p>Nội dung 03</p>
+      <section>
+        <p>Nội dung 1</p>
+        <h3>NGUYỄN HOÀNG PHÚC</h3> 
+        <!-- h3 không đổi màu mặc dù ở trong div -->
+        <p>Nội dung 2</p>
+      </section>
+    </div>
+    <h2>Nội dung h2</h2>
+    <p>Nội dung 04</p>
+    <p>Nội dung 05</p>
+
+    <hr>
+
+    <h4>Nội dung khác</h4>
+    <div class="parent">
+      <h4>Nội dung...</h4>
+        <div class="child">
+          <h4>Nội dung 1</h4>
+        </div>
+        <div class="child">
+          <h4>Nội dung 2</h4>
+        </div>
+        <div class="child">
+          <h4>Nội dung 3</h4>
+        </div>
+        <div class="child">
+          <h4>Nội dung 4</h4>
+        </div>
+        <div class="child">
+          <h4>Nội dung 5</h4>
+        </div>
+    </div>
+  </body>
+</html>

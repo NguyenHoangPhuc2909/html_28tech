@@ -1,0 +1,91 @@
+a:link {
+  color: greenyellow;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: blue;
+}
+
+.box {
+  background-color: yellowgreen;
+  height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.box:hover {
+    color: white;
+    background-color: red;
+    font-size: 30px;
+}
+
+.box:active {
+    background-color: blue;
+}
+
+.box i {
+    display: none;
+}
+
+.box:hover i {
+    display: inline;
+}
+
+/* ul li:first-child {
+    color: red;
+    background-color: rgb(0, 234, 255);
+}
+ul li:last-child {
+    color: green;
+    background-color: rgb(0, 234, 255);
+}
+
+ul li:nth-child(even){
+    font-weight: bold;
+}
+
+.list {
+    list-style-type: lower-greek;
+} */
+
+/* .box1::before {
+  background-color: orange;
+  content: "🤣";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding-top: 20px; 
+  display: inline-block;
+  margin-top: 20px;
+} */
+
+.box1::after {
+  background-color: red;
+  content: "Hello Brooo";
+}
+
+.box1::first-letter {
+  font-size: 40px;
+}
+
+.box1::first-line {
+  text-transform: uppercase;
+}
+
+ul li::marker {
+  color: red;
+  font-size: 20px;
+}
+
+.text::selection {
+  background-color: red;
+  color: black;
+}
+
+.text {
+  opacity: 0.6;
+}

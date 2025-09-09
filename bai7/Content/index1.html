@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        background: #f93ce6;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        /* display: inline-flex; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column-reverse; */
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        /* align-content: center; */
+        height: 300px;
+      }
+
+      .container .item {
+        background-color: orange;
+        border: 3px solid #fff;
+        padding: 10px;
+        margin: 10px;
+        font-size: 20px;
+        color: #000;
+        border-radius: 8px;
+        text-align: center;
+        /* width: calc(25% - 2.5px); */
+        /* width: 24%; */
+        width: 150px;
+      }
+
+      .container .item:nth-child(1){
+        order: 2;
+      }
+
+      .container .item:nth-child(2){
+        align-self: stretch;
+        order: 3;
+      }
+      
+      
+      .container .item:nth-child(3){
+        order: 0;
+      }
+
+      .container .item:nth-child(4){
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Item1</div>
+      <div class="item">Item2</div>
+      <div class="item">Item3</div>
+      <div class="item">Item4</div>
+    </div>
+  </body>
+</html>
