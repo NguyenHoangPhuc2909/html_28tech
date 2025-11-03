@@ -88,6 +88,8 @@
 
   .header .header-main .wrap .menu-mobile i {
     display: block;
+    font-size: 24px;
+    color: var(--color-one);
   }
 }
 
@@ -151,6 +153,7 @@
 
 .section-one .container .inner-wrap {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .section-one .inner-content {
@@ -224,6 +227,15 @@
   font-weight: 600;
 }
 
+@media screen and (max-width: 992px) {
+  .section-one .inner-content {
+    width: 100%;
+  }
+
+  .section-one .inner-image {
+    width: 100%;
+  }
+}
 /* End Section1 */
 
 /* Section2 */

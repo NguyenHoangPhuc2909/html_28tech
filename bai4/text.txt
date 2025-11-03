@@ -33,13 +33,13 @@ BOX MODELS, BORDERS, PADDING, MARGINS
         padding: 25px 50px; trên dưới: 25, trái phải: 50
     }
     (2) div {
-        margin: 25px
+        padding: 25px
     }
     (3) div {
-        margin-top: 20px
-        margin-bottom: 25px
-        margin-right: 50px 
-        margin-left: 75px
+        pading-top: 20px
+        padding-bottom: 25px
+        padding-right: 50px 
+        padding-left: 75px
     }
 4. Margin
     - Margin(Lề) để tạo khoảng cách giữa element này với element khác. Margin nằm ngoài Models.

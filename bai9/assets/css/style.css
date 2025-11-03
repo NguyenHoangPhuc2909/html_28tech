@@ -1,0 +1,75 @@
+.section {
+  background-color: #f7fbf8;
+  padding: 60px 0;
+}
+
+.section .inner-box {
+  margin-bottom: 20px;
+}
+
+.section .inner-box i {
+  color: #5cb774;
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.section .inner-box .inner-title {
+  font-size: 20px;
+}
+
+.section .inner-box .inner-dsc {
+  font-size: 16px;
+}
+
+.section-two {
+  margin-top: 20px;
+}
+
+.section-two .row .inner-head {
+  text-align: center;
+}
+
+.section-two .row .inner-head .inner-title {
+  text-transform: uppercase;
+}
+
+.section-two .row .inner-img img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 991.98px) {
+  .section-two .inner-left {
+    order: 1;
+  }
+  .section-two .inner-content {
+    margin-top: 30px;
+  }
+}
+
+.section-three {
+  margin-top: 20px;
+  background-color: #f7fbf8;
+}
+
+.section-three .row .inner-head {
+  text-align: center;
+  padding: 20px;
+}
+
+.section-three .row .inner-head .inner-title {
+  font-size: 36px;
+}
+
+.section-three .row .inner-head .inner-desc {
+  font-size: 18px;
+}
+
+.section-three .row .col-xl-4 .inner-box {
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #fff;
+}
