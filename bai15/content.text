@@ -1,0 +1,270 @@
+                    JAVASCRIPT
+1. Khái niệm và giới thiệu
+1.1 Khái niệm: Là ngôn ngữ lập trình kịch bản dựa vào các đối tượng có sẵn hoặc được lập trình viên tự định nghĩa.
+1.2 Giới thiệu
+1.3 Cách sử dụng javascript 3 cách như css
+2. Biến (Variable)
+2.1 Khái niệm: nơi để có thể lưu trữ thông tin
+2.2 Khai báo biến bằng từ khoá "var"
+    Cú pháp: var tenBien = giaTri;
+    - tenBien: là tên của biến muốn đặt
+    - giaTri: Là giá trị của biến, có thể là số, chuỗi, mảng, object
+    Lưu ý: Tên biến có phân biệt chữ hoa, chữ thường
+    Quy tắc:
+    - Bắt đầu là chữ cái hoặc ký tự '_'
+    - Kh bắt đầu bằng số, ký tự đặc biệt, '-'
+3. Toán tử (Operators)
+3.1 Toán tử toán học (Arithmetic)
+    - Dùng để thực hiện các phép toán số học.
+    - Danh sách các toán tử số học: +, -, *, /, ** (luỹ thừa), %, ++, --.
+    * Nếu phép cộng giữ một số và một chuỗi thì kq sẽ ra một chuỗi "vd: index2"
+    - Toán tử ++:
+        + Phép tăng giá trị hiện tại lên 1 đv.
+        Hai cách sử dụng:
+            - Đặt trước biến (prefix - tiền tố): tăng trước khi lấy giá trị
+            - Đặt sau biến (postfix - hậu tố): Lấy giá trị rồi mới tăng lên
+    - Toán tử --:
+        + Phép trừ giá trị hiện tại xuống 1 đv.
+        Hai cách sử dụng:
+            - Đặt trước biến (prefix - tiền tố): giảm trước khi lấy giá trị
+            - Đặt sau biến (postfix - hậu tố): Lấy giá trị rồi mới giảm xuống
+3.2 Toán tử so sánh (Comparison)
+    - Là toán tử hai ngôi dùng để so sánh giá trị của hai toán hạng với nhau
+    - Danh sách các toán tử so sánh: >, <, >=, <=, ==, ===,!=, !==
+3.3 Toán tử gán (Assignment)
+    - Dùng để gán giá trị cho một biến
+    - Danh sách các toán tử gán: =, +=, -=, *=, /=, %=
+3.4 Toán tử Logic (Logical)
+    - Là toán tử kết nối hai hay nhiều biểu thức, dùng để kiểm tra mối quan hệ logic giữa các biểu thức.
+Kết quả cuối cùng phụ thuộc vào giá trị của từng biểu thức và loại toán tử logic.
+    Danh sách các toán tử logic: &&, ||, !
+4. Kiểu dữ liệu (Data Types)
+4.1 Kiểu dữ liệu nguyên thuỷ (Primitive Data)
+    - Là kiểu dữ liệu mà giá trị không thể thay đổi được.
+    - Có 6 kiểu: Number, String, Boolean, Undefined, Null, Symbol
+    + Kiểu Number:
+        - Là kiểu dữ liệu dạng số (tương tự trong toán học)
+        - Javascript có hai loại số: số nguyên và số thực.
+        - Ngoài ra, còn có 3 số đặc biệt:
+            + Infinity: là số dương vô cùng.
+            + -Infinity: là số âm vô cùng.
+            + NaN (Not a Number): được sử dụng để đại diện cho những trường hợp tính toán sai hoặc kết quả của một phép tính không xác định.
+    + Kiểu String
+        - Là kiểu dữ liệu dùng để biểu diễn chữ, văn bản, đoạn văn bản.
+        - Có 3 cách biểu diễn string trong javascript: '', "", ``
+    + Kiểu Boolean
+        - Là kiểu dữ liệu logic chỉ bao gồm 2 giá trị là true và false
+    + Kiểu Undefined
+        - Là một kiểu dữ liệu mà khi khai báo ra một biến và không gán giá trị thì trả về Undefined
+    + Kiểu Null
+        - Là một kiểu dữ liệu đặc biệt, chỉ bao gồm một giá trị là null (không biết giá trị, không có giá trị)
+        var a = null;
+    * Khác nhau cơ bản giữa Undefined và Null:
+        - Kiểu dl Null là kiểu dl được gán cho biến, thường được hiểu là không biết (không có)
+        - Kiểu dl Undefined là giá trị mặc định của biến sau khi khai báo mà không gán giá trị cho biến.
+    + Kiểu Symbol
+        - Là một kiểu dl nguyên thuỷ dùng để tạo ra các giá trị duy nhất và bất Biến
+        - Symbol thường được dùng để làm key cho kiểu dữ liệu object
+4.2 Dữ liệu phức tạp (Complex Data)
+    + Kiểu Function
+        - Là một chương trình con giúp thực thi một công việc cụ thể.
+        - Cú pháp:
+            function tenHam(thamso1, thamso2){
+                //Code
+            }
+    + Kiểu Object
+        - Là kiểu dữ liệu tham chiếu, là một tập hợp gồm các cặp key - value
+        - Kiểu dữ liệu của key có thể là String hoặc Symbol
+        - Value ứng với key có thể là bất kỳ kiểu dl nào
+        - Có 2 loại là Object và Array
+        - Ví dụ về Object:
+        var infoUser = {
+            name: "Le Van A",
+            age: 18, 
+            email: "levana@gmail.com"
+            phone: "0123456789"
+        }
+        console.log(infoUser.name);
+        - Ví dụ về Array:
+        var listUser = [
+            "Le Van A",
+            "Nguyen Van B"
+        ]
+        console.log(listUser);
+        console.log(listUser[0]);
+5. Một số ham built-in
+5.1  Khái niệm: là những hàm được js định nghĩa sẵn, chúng ta chỉ việc sử dụng
+5.2 Một số hàm built-in
+    + Hàm alert()
+        - Có nhiệm vụ in một thông báo popup
+        - Có một tham số truyền vào và tham số này chính là nội dung ta muốn thông báo với người dùng.
+        - Cú pháp: alert(message);
+    + Hàm confirm()
+        - Xuất hiện một thông báo popup nhưng nó sẽ có thêm hai sự lựa chọn Y/N
+        - Nếu chọn Y thì trả về true và ngược lại
+        - Cũng có một tham số truyền vào và tham số này chính là message.
+        - Cú pháp: confirm(message);
+    + Hàm prompt()
+        - Hàm prompt() dùng để lấy thông tin từ người dùng
+        - Gồm hai tham số truyền vào là nội dung thông báo và giá trị ban đầu
+        Cú pháp: prompt(title, defaultValue);
+    + Hàm console
+        - Dùng để in ra một nội dung ở tab console trên dev tools
+        - Có 3 cách hay sử dụng:
+            + console.log(): in ra thông báo
+            + console.warn(): in ra cảnh báo 
+            + console.error(): in ra lỗi
+    + Hàm setTimeout
+        - Code sẽ chạy 1 lần duy nhất sau một khoảng thời gian.
+        - Cú pháp:
+        setTimeout(function(), {
+            //Code
+        }, time)
+        - VD: setTimeout(function(){
+            console.log("Xin chao");
+        }, 5000)
+    + Hàm setInterval
+        - Code sẽ chạy lặp lại sau một khoảng thời gian.
+        - Cú pháp:
+        setInterval(function(){
+            //Code
+        }, time)
+        - VD:
+        setInterval(function(){
+            console.log("Xin chao");
+        }, 5000)
+6. Typeof
+    - Các toán tử typeof cho phép trả về kiểu của một biến
+    - Nó hữu ích khi chúng ta muốn xử lý các giá trị của các kiểu khác nhau hoặc chỉ muốn kiểm tra nhanh.
+    - Cú pháp: typeof x (với x là một biến hoặc một biểu thức)
+7. Làm việc với String
+7.1 Length: trả về độ dài của chuỗi
+7.2 indexOf()
+    - Tìm vị trí đầu tiên của một chuỗi nằm trong một chuỗi.
+    - Nếu không tìm thấy sẽ trả về -1
+    - Có phân biệt chữ hoa, chữ thường
+    - Cú pháp: string.indexOf(searchvalue, start);
+        + searchvalue: giá trị cần tìm kiếm
+        + start: vị trí bắt đầu tìm kiếm (trái -> phải), mặc định bắt đầu từ 0, tìm kiếm xuôi
+7.3 lastIndexOf()
+    - Tìm vị trí cuối cùng của một chuỗi nằm trong một chuỗi.
+    - Nếu không tìm thấy sẽ trả về -1
+    - Có phân biệt chữ hoa, chữ thường
+    - Cú pháp: string.lastIndexOf(searchvalue, start);
+        + searchvalue: giá trị cần tìm kiếm
+        + start: vị trí bắt đầu tìm kiếm (trái -> phải), mặc định bắt đầu từ 0, tìm kiếm ngược lại
+7.4 slice()
+    - Dùng để cắt một chuỗi và trả về một chuỗi mới
+    - Chuỗi ban đầu không thay đổi
+    - Cú pháp: string.slice(start, end) (không lấy giá trị end)
+7.5 replace()
+    - Dùng để thay thế 1 chuỗi thành 1 chuỗi mới
+    - Nhưng chỉ thay thế chuỗi đầu tiên mà nó tìm thấy
+    - Muốn thay thế được tất cả các từ tìm thấy thì phải dùng Regular Expression (biểu thức chính quy)
+    - Cú pháp: string.replace(searchValue, newValue);
+    - VD:
+        var myString = `Xin chao! Toi ten la Phuc. Toi nam nay 20 tuoi.`;
+        console.log(myString.replace("Toi", "Minh"));
+        console.log(myString.replace(/Toi/g, "Minh"));
+7.6 toUpperCase(), toLowerCase()
+7.7 trim(): Dùng để loại bỏ khoảng trắng ở hai đầu
+7.8 charAt(): Dùng để lấy ký tự thông qua index (với index là vị trí của ký tự cần lấy)
+    - Cú pháp: string.charAt(index)
+7.9 split(): Chuyển một chuỗi thành một Array, nhưng cần tìm ra điểm chung của chuỗi đó
+    - VD:
+        var myString = `HTML5, CSS4, Javascript`;
+        console.log(myString.split()); //Cả string là 1 phtu
+        console.log(myString.split("")); //Mỗi ký tự là 1 phtu
+        console.log(myString.split(", ")); //Mỗi từ là 1 phtu
+        console.log(myString.split(", ", 2)); //Mỗi từ là 1 phtu, lấy tối đa 2 phần tử
+8. Làm việc với Number
+8.1 isNaN()
+    - Dùng để kiểm tra một biến có phải là NaN không
+    - Cú pháp: isNaN(tenBien)
+8.2 toString()
+    - Chuyển kiểu số thành kiểu string
+    - Cú pháp: tenBien.toString()
+8.3 toFixed()
+    - Dùng để làm tròn số thập phân
+    - Nếu số ngay sau số cần làm tròn >=5 thì sẽ làm tròn lên và ngược lại
+    - Cú pháp: toFixed(digits) //digits: là số chữ số sau dấu thập phân. Không điền mặc định là 0
+9. Làm việc với Array
+9.1 toString()
+    - Chuyển array thành string, tự động thêm dấu phẩy ngăn cách
+    - Cú pháp: array.toString()
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.toString()); //Trả về: "HTML5,CSS3,Javascript"
+9.2 join()
+    - Chuyển array thành string, thêm dấu bất kỳ để ngăn cách giữa các phần tử
+    - Cú pháp: array.join(separator)
+        + separator (dải phân cách) là dấu ngăn cách để thêm vào string, mặc định là dấu phẩy
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.join()); //Trả về: "HTML5,CSS3,Javascript"
+    console.log(list.join(",")); //Trả về: "HTML5,CSS3,Javascript"
+    console.log(list.join("")); //Trả về: "HTML5CSS3Javascript"
+    console.log(list.join(", ")); //Trả về: "HTML5, CSS3, Javascript"
+    console.log(list.join(" - ")); //Trả về: "HTML5 - CSS3 - Javascript"
+9.3 pop()
+    - Dùng để xoá phần tử cuối mảng và trả về phần tử cuối mảng đó
+    - Cú pháp: array.pop()
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.pop()); //Trả về: "Javascript"
+    console.log(list); //Trả về: ["HTML5", "CSS3"]
+9.4 push()
+    - Thêm một hay nhiều phần tử vào cuối mảng. Trả về độ dài mới của mảng
+    - Cú pháp: array.push(item1, item2,..., itemX)
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.push("Bootstrap 4", "ReactJS")); //Trả về 5
+9.5 shift()
+    - Dùng để xoá phần tử đầu mảng và trả về phần tử ở đầu mảng đó
+    - Cú pháp: array.shift()
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.shift()); // "HTML5"
+9.6 unshift()
+    - Thêm một hoặc nhiều phần tử vào đầu mảng. Trả về độ dài mới của mảng
+    - Cú pháp: array.unshift(item1, item2,..itemX)
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.unshift("Bootstrap 4", "ReactJS")); //Trả về 5
+9.7 splice()
+    - Xoá hoặc chèn phần tử mới vào mảng. Trả về mảng bị xoá
+    - Cú pháp: array.splice(index, howmany, item1,..., itemX)
+        + index: vị trí thêm/ xoá phần tử (bắt buộc)
+        + howmany: số lượng phtu cần xoá (kbb)
+        + item1,.., itemX: các phtu mới được thêm vào (kbb)
+    - VD chèn:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.splice(2, 0, "Bootstrap 4", "ReactJS")); //Trả về []
+    console.log(list); //Trả về: ["HTML5", "CSS3", "Bootstrap 4", "ReactJS", "Javascript"]
+    - VD xoá:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.splice(1, 1)); //Trả về ["CSS3"]
+    console.log(list); //Trả về: ["HTML5", "Javascript"]
+    - VD xoá và chèn phtu:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    console.log(list.splice(2, 1, "Bootstrap 4", "ReactJS")); //Trả về ["Javascript"]
+    console.log(list); //Trả về: ["HTML5", "CSS3", "Bootstrap 4", "ReactJS"]
+9.8 concat()
+    - Dùng để nối 2 array. Không làm ảnh hưởng đến mảng ban đầu\
+    - Cú pháp: array1.concat(array2, array3,..,arrayX)
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript"];
+    var list2 = ["Bootstrap 4", "ReactJS"];
+    console.log(list.concat(list2)); //Trả về: ["HTML5", "CSS3", "Javascript", "Bootstrap 4", "ReactJS"]
+    console.log(list); //["HTML5", "CSS3", "Javascript"];
+9.9 slice()
+    - Dùng để cắt các phần tử. Không làm ảnh hưởng đến mảng ban đầu
+    - Cú pháp: array.slice(start, end)
+        + start: vị trí bắt đầu, mặc định là 0
+        + end: vị trí kết thúc, mặc định là phtu cuối cùng (kh lấy end)
+    - VD:
+    var list = ["HTML5", "CSS3", "Javascript", "Bootstrap 4", "ReactJS"];
+    console.log(list.slice(3)); //["Bootstrap 4", "ReactJS"]
+    console.log(list.slice(1, 3)); //["CSS3", "Javascript"]
+    console.log(list.slice(-3, -1)); //["Javascript", "Bootstrap 4"]
+    console.log(list); //["HTML5", "CSS3", "Javascript", "Bootstrap 4", "ReactJS"]

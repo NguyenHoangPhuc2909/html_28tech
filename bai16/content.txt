@@ -1,0 +1,133 @@
+1 Câu lệnh rẽ nhanh If Else
+1.1 Câu lệnh if
+    - Sẽ kiểm tra điều kiện biểu thức bên trong cặp dấu ngoặc đơn (). Nếu kết quả là true thì một khối code sẽ được thực thi
+    - Cú pháp:
+    if(condition){
+        //Nếu đk đúng thì thực hiện
+    }
+    + Trong đó condition là mđe đk và luôn luôn phải có một trong hai giá trị là true/false hoặc gtri tương đương như:
+        NULL => false
+        Rỗng "" => false
+        Số khác 0 => true
+        Số 0 => false
+1.2 Câu lệnh if else 
+    - Lệnh else được thực hiện nếu lệnh if kh thực hiện được, tức là đkien ở condition sẽ có giá trị là false
+    - Lưu ý: Khi dùng lệnh else thì bắt buộc phải có một lệnh if đứng trước nó
+    - Cú pháp:
+    if(condition){
+        //Code cho lệnh if
+    } else {
+        //Code cho lệnh else
+    }
+1.3 Kết hợp nhiều lệnh if else
+    - Có thể kết hợp nhiều câu lệnh if để xử lý bài toán, bằng cách thêm nhiều lệnh else if phía sau
+    - Cú pháp:
+    if(condition1){
+        //Code cho lệnh if 1
+    }
+    else if(condition2){
+        //Code cho lệnh if 2
+    }
+    else {
+        //Code cho lệnh else
+    }
+1.4 Lệnh if else lồng nhau
+    var a; var b;
+    if (a != undefined && b != undefined) {
+        if (a == b) {
+            console.log("a bang b");
+        } else {
+            console.log("a khac b");
+        }
+    }   
+    else {
+        console.log("a hoac b chua duoc gan gia tri.")
+    }
+1.5 Câu lệnh if else rút gọn (Toán tử 3 ngôi - Ternary operator)
+    - Có thể  rút gọn câu lệnh if else bằng cách dùng toán tử rẽ nhánh ?
+    - Cú pháp: var result = condition ? value1 : value2;
+    + condition: đkien cần kiểm tra
+    + Nếu condition là true, trả về value1
+    + Nếu condition là false, trả về value2
+2. Switch case
+    - Có công dụng giống như lệnh else if đó là đều dùng để rẽ nhánh chương trình
+    - Ứng với mỗi nhánh sẽ có một đkien cụ thể và đkien đó phải sd toán tử so sánh bằng
+    - Còn đối với lệnh else if thì bạn có thể truyền vào một mệnh đề bất kỳ và sử dụng nhiều toán tử khác nhau
+    - Cú pháp:
+        switch(variable){
+            case value1:
+                //do some thing
+                break;
+            case value2:
+                //do some thing
+                break;
+            default:
+                //do some thing
+                break;
+        }
+    - Trường hợp bỏ break đi thì câu lệnh sẽ chạy tiếp xuống case tiếp theo, đến case nào có break thì dừng lại
+    - Trường hợp không có default thì nếu ra vào trường hợp này sẽ không in ra gì.
+    - Ta cũng có thể gom nhóm các case lại
+3. Vòng lặp For
+    - Dùng để lặp lại việc thực thi một đoạn mã nào đó một số lần
+    - Cú pháp:
+        for(bienkhoitao; dieukienthucthi; buocnhay) {
+            //Code
+        }
+        + dieukienthucthi: nếu bỏ trống thì lặp vô tận
+4. Vòng lặp For in
+    - Dùng để lấy ra key của một object (cũng có thể áp dụng cho array, string)
+    - Cú pháp:
+        for (key in object) {
+            //Code
+        }
+        + key: là tên biến
+        + object: là một object, mỗi key sẽ tương ứng với key ở trong object
+5. Vòng lặp for of
+    - Dùng để lấy ra phtu của một array, string (Không áp dụng với object)
+    - Cú pháp:
+        for (variable of iterable) {
+            //Code
+        }
+        + variable: là tên biến, lấy ra các giá trị trong mảng
+        + iterable: là một mảng hoặc string, mỗi variable sẽ tương ứng với từng giá trị ở trong mảng hoặc string
+6. Vòng lặp While
+6.1 Vòng lặp While
+    - Luôn kiểm tra đkien trước, nếu đkien thoả mãn thì mới chạy vào trong vòng lặp
+    - Cú pháp:
+        while (condition) {
+            //Code
+        }
+        + Khi condition có giá trị true thì code được thực thi
+        + Khi condition là false thì vòng lặp kết thúc
+6.2 Vòng lặp do...while
+    - Luôn thực hiện ít nhất một lượt lặp. Sau đó mới kiểm tra đkien lặp
+    - Cú pháp:
+        do {
+            //Code
+        } while (condition);
+        + Khi condition có giá trị true thì code được thực thi
+        + Khi condition là false thì vòng lặp kết thúc
+7. Break: có tác dụng dừng vòng lặp cho dù đkien của vòng lặp vẫn đang đúng
+8. Contiue
+    - Có tác dụng bỏ qua một bước lặp nào đó
+    - Lúc gặp lệnh continue thì tất cả những đoạn code nằm bên dưới sẽ không được thực hiện mà nó sẽ nhảy sang vòng lặp mới luôn
+9. Biến (Variable)
+9.1 Khái niệm
+9.2 Quy tắc đặt tên biến 
+9.3 Các cách khai báo biến
+    - Khai báo biến bằng từ khoá var 
+        + Cú pháp: var tenBien = giaTri;
+            + tenBien: là tên của biến mà bạn muốn đặt
+            + giaTri: là giá trị của biến, có thể là số, chuỗi, mảng, object
+        + Tên biến có phân biệt chữ hoa, chữ thường
+    - Khai báo biến bằng từ khoá let
+        + Biến let chỉ có phạm vi trong khối khai báo mà thôi
+        + Vì vậy nó sẽ tối ưu trong trường hợp bạn cần khai báo một biến chỉ sử dụng tạm thời trong một phạm vi nhất đinh.
+        Phạm vi này ta gọi là block scope.
+    - Khai báo biến bằng từ khoá const
+        + Cú pháp: const tenBien = giaTri;
+        + const là một hằng số, vì vậy khi khai báo biến const thì bạn phải gán giá trị cho nó luôn, sau này cũng không thể thay đổi giá trị của biến
+    - Khai báo biến không cần dùng từ khoá
+        + Cú pháp: tenBien = giaTri;
+        + Chỉ nên sử dụng cách này khi ta muốn gán lại giá trị của một biến
