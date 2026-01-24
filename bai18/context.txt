@@ -1,0 +1,110 @@
+1. Khái niệm BOM
+    - BOM là chữ viết tắt của Browser Object Model, hay còn gọi là các đối tượng liên quan đến trình duyệt
+    - Các BOM giúp ta biết được lịch sử lướt web, lưu các hành động và trạng thái của người dùng trên trang
+    - Các loại BOM: window/screen/location/history/navigator/popup/timing/cookies
+2. BOM window
+    2.1. Khái niệm
+        - window là một đối tượng có phương thức và thuộc tính được dùng để xử lý trình duyệt
+        - window có cấp độ cao nhất
+    2.2. innerHeight và innerWidth
+        - innerHeight để lấy kích thước của chiều cao tài liệu 
+        - innerWidth để lấy kích thước của chiều rộng tài liệu 
+        - Cú pháp:
+            + window.innerHeight;
+            + window.innerWidth;
+    2.3 window.open()
+        - Để mở một cửa sổ mới
+        - Cú pháp:
+            window.open(url, name, options)
+        - Trong đó:
+            + url: đường dẫn web mà bạn muốn mở
+            + name: tên bạn đặt cho cửa sổ này
+            + options: là một chuỗi các thông số được cách nhau bởi dấu phẩy, sau đây là các thông số thông dụng
+                height: chiều cao của cửa sổ (px)
+                width: chiều rộng của cửa sổ (px)
+                top: vị trí hiển thị cửa sổ so với lề trên (px)
+                left: vị trí hiển thị cửa sổ so với lề trái (px)
+    2.4. window.close()
+        - Để đóng cửa sổ mà ta đã dùng lệnh open() để mở
+        - Cú pháp:
+            + Gọi hàm mở cửa sổ:
+                var myWindow = window.open(url, name, options)
+            + Gọi hàm đóng cửa sổ:
+                myWindow.close();
+    2.5. window.location.href
+        - Để lấy đường dẫn hiện tại của trang web
+        - Cú pháp:
+            window.location.href;
+3. BOM Screen 
+    3.1. screen.width và screen.height
+        - screen.width để lấy CR màn hình máy tính (kh phải CR của màn hình trình duyệt)
+        - screen.height để lấy CD màn hình máy tính (kh phải CD của màn hình trình duyệt)
+4. BOM location
+    4.1. Khái niệm
+        - location là một đối tượng được dùng để xử lý các vấn đề liên quan đến URL của trang web
+        - Cú pháp: window.location hoặc location
+    4.2. Phương thức reload()
+        - Để load lại trang web
+        - Cú pháp: location.reload()
+    4.3. Các thành phần
+        - hash: lấy phần sau dấu # của URL
+        - host: lấy hostname và port của URL
+        - hostname: lấy hostname
+        - href: lấy URL
+        - origin: trả về protocol, hostname và port của URL
+        - pathname: lấy path name của URL
+        - port: lấy port của URL
+        - search: lấy phần query string của URL (sau dấu ?)
+        - Ví dụ: https://daca.vn/index.html?search=test123#abc
+5. BOM History 
+    5.1. Khái niệm
+        - history dùng để quản lý lịch sử lướt web
+        - Khi bạn lướt web thì trình duyệt sẽ lưu lại lịch sử lướt web của bạn. Dựa vào lịch sử đó, ta có thể xem lại
+    những ngày trước đã xem những gì, truy cập vào những trang nào
+        - Cú pháp: window.history hoặc history
+    5.2. Xem lịch sử lướt web
+        - history.length: đếm tổng số trang đã lưu trong history
+        - history.back(): trở lại trang trước
+        - history.forward(): đi tới trang kế tiếp
+        - history.go(number): đi tới một trang:
+            + nếu number âm thì tính từ trang hiện tại trừ đi number
+            + nếu number dương thì tính từ trang hiện tại cộng với number
+6. BOM Navigator 
+    6.1. Khái niệm:
+        - Navigator được dùng để kiểm tra các thông tin về người dùng như trình duyệt đang sử dụng là gì? HĐH đang sử dụng là gì? 
+    Trình duyệt có bật cookie hay không? Có thể kiểm tra được tên và phiên bản của trình duyệt
+        - Cú pháp: window.navigator hoặc navigator
+    6.2. Một số thuộc tính
+        - navigator.cooKieEnabled: Để kiểm tra trình duyệt có bật Cookie hay không
+        - navigator.appName: Để kiểm tra tên trình duyệt
+        - navigator.appCodeName: Để kiểm tra tên mã code của trình duyệt
+        - navigator.appVersion: Để kiểm tra Version của trình duyệt
+        - navigator.platform: Xem HĐH mà người dùng đang sử dụng
+        - navigator.language: Để kiểm tra ngôn ngữ của trình duyệt
+7. BOM Popup 
+    - alert("Noi dung");
+    - confirm("Noi dung");
+    - prompt("Noi dung", "Noi dung mac dinh");
+8. BOM Timing 
+    - setTimeout(function, milliseconds);
+    - setInterval(function, milliseconds);
+9. Cookies 
+    9.1. Khái niệm
+        - Cookies là dữ liệu được lưu trữ trong một file text, và nằm trong máy tính, nên việc lưu trữ cookie sẽ là vĩnh viễn hoặc là một thời gian cụ thể,
+    tất cả đều do bạn thiết lập
+        - Khi trình duyệt gửi thông tin lên server thì cookies sẽ được gửi kèm theo. Đây cũng là thông tin để trả lời cho câu hỏi tại sao Cookie được lưu trữ
+    ở Client mà trên Server vẫn đọc được.
+        - Cookie được lưu trữ ở dạng name=value
+    9.2. Các thao tác với Cookie
+        - Tạo cookie
+            + Cú pháp: document.cookie = 'name=value';
+            + Để thiết lập thời gian sống cho cookie thì ta sử dụng từ khoá expires. Định dạng thời gian là UTC
+        - Lấy giá trị cookie
+            + Cú pháp: var giaTri = document.cookie;
+            + Lúc này kết quả sẽ trả về một chuỗi Cookie có cấu trúc name=value, trường hợp bạn lưu nhiều cookie thì nó sẽ có dạng name1=value1; name2=value2
+        - Đổi giá trị cookie
+            + Để thay đổi giá trị cho Cookie thì bạn chỉ việc gán lại giá trị cho cookie. Không sinh ra cookie mới mà sẽ ghi đè lên cookie cũ
+            + Cú pháp: document.cookie = 'name=value';
+        - Xoá cookie
+            + Chỉ cần xét lại giá trị ngày hết hạn expires về những thời gian trước đấy
+            + Cú pháp: document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";

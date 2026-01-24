@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" onclick="openTab()">Mở tab mới</button>
+    <button type="button" onclick="closeTab()">Đóng tab</button>
+    <button type="button" onclick="reloadWeb()">Reload web</button>
+    <button type="submit" onclick="login()">Đăng nhập</button>
+    <button type="submit" onclick="updateInfo()">Cập nhật thông tin </button>
+    <button type="submit" onclick="deleteInfo()">Xoá thông tin </button>
+    <script>
+      console.log(window);
+      console.log(window.innerHeight);
+      console.log(window.innerWidth);
+      
+      let wd;
+      function openTab() {
+        wd = window.open(
+          "http://127.0.0.1:5500/bai18/28tech.html",
+          "_blank",
+          "width = 1200, height=600, top = 200, left = 250",
+        );
+      }
+
+      function closeTab() {
+        wd.close();
+      }
+
+      let href = window.location.href;
+      console.log(href);
+      // setTimeout(() => {
+      //   console.log(href);
+      // }, 5000);
+
+      let screenWidth = window.screen.width;
+      let scrennHeight = window.screen.height;
+      
+      setTimeout(() => {
+        console.log(screenWidth);
+        console.log(scrennHeight);
+      }, 5000);
+
+      console.log(window.location);
+      
+      function reloadWeb() {
+        window.location.reload();
+      }
+
+      // setInterval(() => {
+      //   window.location.reload();
+      // }, 5000);
+
+      console.log(window.history);
+      console.log(window.navigator);
+
+      //SetCookie
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+      }
+
+      //GetCookie
+      function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while(c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if(c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      //DeleteCookie
+      function deleteCookie(cname) {
+        document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+      }
+      //Cookie
+      function login() {
+        if(true) {
+          // document.cookie = 'value=jsjadiolsia; expires=Sun, 25 Jan 2026 00:00:00 UTC';
+          // document.cookie = 'email=phucqaqs@gmail.com';
+          // document.cookie = 'fullname=Nguyen Hoang Phuc';
+          setCookie("value", "jsjadiolsia", 1);
+          setCookie("email", "phucqaqs@gmail.com", 1);
+        }
+      }
+
+      let allCookies = document.cookie;
+      console.log(allCookies);
+
+      let getEmail = getCookie("email");
+      console.log(getEmail);
+
+      function updateInfo() {
+        document.cookie = 'email=phucqsqn123@gmail.com';
+      }
+
+      function deleteInfo() {
+        // document.cookie = "value=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        // document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        deleteCookie("value");
+      }
+    </script>
+  </body>
+</html>
