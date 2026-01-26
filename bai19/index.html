@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .light {
+        background-color: lightblue;
+      }
+
+      .dark {
+        background-color: darkblue;
+        color: #fff;
+      }
+
+      .list-2 {
+        color: blue;
+      }
+
+      .box1 .box2 h2 .link {
+        background-color: yellowgreen;
+      }
+
+      .box1 .box2 h2 .link.active {
+        background-color: orange;
+      }
+    </style>
+    <h1>Noi dung the h1</h1>
+    <a href="#">Trang Facebook</a>
+
+    <div class="light" id="box">Noi dung the div</div>
+    <div class="light" id="box">Noi dung the div</div>
+
+    <p>The p 01</p>
+    <p>The p 02</p>
+    <p>The p 03</p>
+    <p>The p 04</p>
+
+    <ul id="menu">
+      <li>Muc 1</li>
+      <li>Muc 2</li>
+      <li>Muc 3</li>
+    </ul>
+
+    <h3 class="list">The 01</h3>
+    <h2 class="list">The 02</h2>
+    <h1 class="list">The 03</h1>
+    <h4 class="list">The 04</h4>
+    <h5 class="list">The 05</h5>
+
+    <div class="box1">
+      <div class="box2">
+        <h2>
+          <a class="link" href="#">Noi dung the a</a>
+        </h2>
+        <h2>
+          <a class="link" href="#">Noi dung the a</a>
+        </h2>
+      </div>
+    </div>
+    <script>
+      //DOM Element
+      console.log(document);
+      const box = document.getElementById("box");
+      box.classList.add("dark");
+      console.log(box);
+
+      const menu = document.getElementById("menu");
+      console.log(menu);
+
+      const listp = document.getElementsByTagName("p");
+      console.log(listp);
+      console.log(listp[3]);
+
+      const tagName = document.getElementsByClassName("list");
+      console.log(tagName);
+      console.log(...tagName);
+      console.log([...tagName]);
+      //mục đích của ... là giải cách item trong tagName thêm vào mảng [...tagName]
+      [...tagName].forEach((item) => {
+        item.classList.add("list-2");
+        item.classList.remove("list");
+      });
+
+      const element = document.querySelector(".box1 .box2 h2 .link");
+      element.classList.add("active");
+      console.log(element);
+
+      const elements = document.querySelectorAll(".box1 .box2 h2 .link");
+      [...elements].forEach((item) => {
+        item.classList.add("test");
+      });
+      console.log(elements);
+
+      const boxx = document.querySelector(".list");
+      console.log(boxx);
+    </script>
+  </body>
+</html>

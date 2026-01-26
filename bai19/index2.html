@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="h2">
+        <span>Noi dung the h2 - span01</span>
+        <span>Noi dung the h2 - span02</span>
+        <span>Noi dung the h2 - span03</span>
+    </h2>
+    <div id="box"></div>
+
+    <div class="product-item" data_id="324234" data_category="123">
+        Ảnh
+        Tiêu đề 
+        Giá
+    </div>
+    <div class="product-item" data_id="321234" data_category="123">
+        Ảnh
+        Tiêu đề 
+        Giá
+    </div>
+    <script>
+        //DOM HTML
+        const h2 = document.querySelector("#h2");
+        // const contentH2 = h2.innerHTML; //Lấy tất cả HTML bên trong bao gồm cả HTML + nội dung bên trong
+        // const contentH2 = h2.textContent; //Bỏ các HTML bên trong, chỉ lấy nội dung bên trong, giữ các khoảng trắng trong source, kể cả xuống dòng/tab, không quan tâm CSS
+        const contentH2 = h2.innerText; //Bỏ các HTML bên trong, chỉ lấy nội dung bên trong, loại bỏ các khoảng trắng thừa, lấy text hiển thị cho người dùng, phụ thuộc vào CSS và layout
+        console.log(contentH2);
+
+        // <h2 id="h2">
+        //     Hello
+        //     <span style="display:none">World</span>
+        // </h2>
+
+        // innerHTML: Hello <span style="display:none">World</span>
+        // textContent: Hello World
+        // innerText: Hello
+
+        const box = document.querySelector("#box");
+        box.innerHTML = contentH2;
+        console.log(box);
+
+        const productList = document.querySelectorAll(".product-item");
+
+        let card = [];
+
+        console.log(productList);
+        [...productList].forEach(item => {
+            const dataId = item.getAttribute("data_id");
+            card.push(dataId);
+            // console.log(dataId);
+            item.setAttribute("data_category", "234");
+            // item.setAttribute("class", "product-item product-test");
+        })
+
+        console.log(card);
+    </script>
+</body>
+</html>
