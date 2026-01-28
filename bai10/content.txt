@@ -1,6 +1,0 @@
-BOOTSTRAP 4
-https://getbootstrap.com/docs/4.6/getting-started/introduction/
-1. Components: Collapse, Dropdowns, Forms, Modal, Navs, Pagination
-    1.1. Collapse (Sự biến hình)
-    1.2. Dropdowns
-2. BT
