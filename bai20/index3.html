@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- DOM Navigation -->
+     <div class="parent">
+        <div class="child-1" id="child-1">
+            <div class="box">Box1</div>
+            <div class="box">Box2</div>
+            <div class="box">Box3</div>
+        </div>
+        <div class="child-2">Child 2</div>
+        <div class="child-3">Child 3</div>
+     </div>
+
+     <script>
+        const childOne = document.querySelector("#child-1");
+        console.log(childOne);
+        console.log(childOne.parentNode);
+        console.log(childOne.parentNode.parentNode);
+        console.log(childOne.childNodes);
+        // console.log(childOne.querySelectorAll(".box"));
+
+        console.log(childOne.firstElementChild);
+        console.log(childOne.lastElementChild);
+        console.log(childOne.nextElementSibling);
+        console.log(childOne.previousElementSibling);
+        console.log(childOne.nodeName);
+
+
+        const parentt = document.querySelector(".parent");
+        console.log(parentt.querySelectorAll(".box"));
+     </script>
+</body>
+</html>

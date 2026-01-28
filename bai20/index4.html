@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- DOM Nodes -->
+    <div id="ads"></div>
+    <div id="ads-2"></div>
+
+    <script>
+        // createElement("tagName")
+        const div = document.createElement("div");
+        div.innerHTML = "Quảng cáo";
+        console.log(div);
+
+
+        setInterval(() => {
+            const divAds = document.querySelector("#ads");
+            divAds.appendChild(div);
+        }, 3000);
+
+        // createTextNode
+        const div_1 = document.createElement("div");
+        const text = document.createTextNode("Quảng cáo 2...");
+        div_1.appendChild(text);
+        console.log(div_1);
+
+        const divAds1 = document.querySelector("#ads-2");
+        divAds1.appendChild(div_1);
+    </script>
+
+
+    <!-- appendChild() -->
+    <ul id="menu">
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ul>
+
+    <button id="btnAdd">Thêm mới</button>
+    <script>
+        const menu = document.querySelector("#menu");
+        const btnAdd = document.querySelector("#btnAdd");
+
+        btnAdd.onclick = function () {
+            const firstElement = menu.firstElementChild;
+
+            const newItem = document.createElement("li");
+            newItem.innerHTML = "Item mới";
+            // menu.appendChild(newItem);
+            menu.insertBefore(newItem, firstElement);
+        }
+
+        // removeChild
+        const listItem = menu.querySelectorAll("li");
+
+        // listItem.forEach(item => {
+        //     item.onclick = function() {
+        //         menu.removeChild(item);
+        //     }
+        // })
+
+
+        // replaceChild
+        listItem.forEach(item => {
+            item.onclick = function () {
+                const newItem = document.createElement("li");
+                newItem.innerHTML = "Item mới";
+                menu.replaceChild(newItem, item);
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- DOM Events Listener -->
+     <button id="button">Button</button>
+     <script>
+        function Func1() {
+            console.log("Fact 1");
+        }
+        function Func2() {
+            console.log("Fact 2");
+        }
+        const button = document.querySelector("#button");
+
+        // button.onclick = function() {
+        //     Func1();
+        // }
+
+        // button.onclick = function() {
+        //     Func2();
+        // }
+        
+        // DOM Events chỉ gọi được 1 sự kiện nếu 1 sự kiện gọi 2 lần thì chương trình sẽ thực thi lần 2 vì lần 2 đã ghi đè lần 1
+
+        // button.addEventListener("click", function() {
+        //     Func1();
+        // });
+        // button.addEventListener("click", function() {
+        //     Func2();
+        // });
+
+        //HOẶC CÓ THỂ GHI NHƯ NÀY
+        button.addEventListener("click", Func1);
+        button.addEventListener("click", Func2);
+
+        setTimeout(() => {
+            button.removeEventListener("click", Func2)
+        }, 5000);
+     </script>
+</body>
+</html>
