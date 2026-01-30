@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Button</button>
+
+    <ul id="menu">
+      <li>Muc 1</li>
+      <li>Muc 2</li>
+      <li>Muc 3</li>
+    </ul>
+    <script>
+      // Global
+      // "use strict"
+
+      // a = 10;
+      // console.log(a);
+
+      // b = 20;
+      // console.log(b);
+
+      //Local
+      // function test() {
+      //     "use strict"
+      //     a = 20;
+      //     console.log(a);
+      // }
+
+      // test();
+
+      //this
+      // console.log(this);
+
+      // "use strict"
+      // function test() {
+      //     console.log(this);
+      // }
+
+      // test();
+
+      // this trong cac su kien js
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", function () {
+        console.log(this);
+      });
+
+      const listItem = document.querySelectorAll("li");
+      console.log(listItem);
+
+    //   [...listItem].forEach(function(item) {
+    //     item.addEventListener("click", function() {
+    //         console.log(this);
+    //     });
+    //   });
+
+    // [...listItem].forEach(item => {
+    //     item.addEventListener("click", function(){
+    //         console.log(this);
+    //     });
+    // });
+
+    // this trong Arrow function: không tồn tại this, nếu sử dụng thì sẽ gọi đến window
+    [...listItem].forEach(item => {
+      item.addEventListener("click", () => {
+        console.log(this);
+      });
+    });
+    
+    // this trong Object
+    let info = {
+        fullname: "Nguyen Hoang Phuc",
+        age: 18,
+        email: "phucqaqs@gmail.com",
+
+        getFullName: function() {
+            console.log(info.fullname);
+            console.log(this.fullname);
+        },
+        cccd: {
+            fullName: "NGUYEN HOANG PHUC",
+            address: "So 123, duong ABC",
+            getInfoCCCD: function() {
+                console.log(this.fullName);
+            }
+        }
+    };
+
+    info.getFullName();
+
+    info.cccd.getInfoCCCD();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //SCOPE
+      var a = 10;
+
+      function test() {
+        console.log(a);
+      }
+      function test2() {
+        console.log(a);
+      }
+
+      test();
+      test2();
+
+      function test3() {
+        var b = 2;
+        console.log(b);
+
+        function test4() {
+          var c = 1;
+          console.log(c);
+        }
+
+        test4();
+      }
+
+      test3();
+      // test4(); test4() khai bao o trong test3()
+
+      //Hoisting
+      var x;
+      console.log(x);
+
+      x = 10;
+      console.log(x);
+    </script>
+
+    <!-- <script>
+        console.log(y);
+        let y = 10;  //const như let
+    </script> -->
+
+    <script>
+        //Hoisting function
+        //Declaration function
+        let m = 10;
+        let n = 20;
+
+        let c = sum(m, n);
+        console.log(c);
+
+        // function sum(x, y) {
+        //     return (x + y);
+        // }
+
+        //Expression function
+        // var sum = function(x, y) {
+        //     return (x + y);
+        // }
+
+
+        //Arrow function
+        var sum = (x, y) => {
+            return x + y;
+        }
+    </script>
+  </body>
+</html>
