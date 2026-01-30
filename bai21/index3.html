@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="listUser" class="user-list"></div>
+    <!-- JSON -->
+
+    <script>
+        let infoUser = {
+            fullName: "Nguyen Hoang Phuc",
+            email: "phucqaqs@gmail.com",
+            age: 18
+        };
+
+        //VD1: JSON có giá trị là Object
+        let infoUserJSON = `
+        {
+            "fullName": "Nguyen Hoang Phuc",
+            "email": "phucqaqs@gmail.com",
+            "age": 18
+        }`;
+        console.log(infoUserJSON);
+
+        //Convert từ JSON -> Javascript
+        let infoUserJSONtoJS = JSON.parse(infoUserJSON);
+        console.log(infoUserJSONtoJS);
+        console.log(infoUserJSONtoJS.fullName);
+
+        //Convert từ Javascript -> JSON
+        let infoUserJStoJSON = JSON.stringify(infoUser);
+        console.log(infoUserJStoJSON);
+
+        //VD2: JSON có giá trị là Number
+        let jsonNumber = `5`;
+        console.log(jsonNumber);
+        console.log(JSON.parse(jsonNumber));
+
+        //VD3: JSON có giá trị là String
+        let jsonString = `"Xin chao ban"`;
+        console.log(jsonString);
+        console.log(JSON.parse(jsonString));
+
+        //VD4: JSON có giá trị là Boolean
+        let jsonBoolean = `true`;
+        console.log(jsonBoolean);
+        console.log(JSON.parse(jsonBoolean));
+
+        //VD5: JSON có giá trị là Array
+        let jsonArray = `
+        [
+            {
+        "id": 1,
+        "name": "Le Van A",
+        "email": "levana@gmail.com"
+            },
+            {
+        "id": 2,
+        "name": "Le Van B",
+        "email": "levanb@gmail.com"
+            },
+            {
+        "id": 3,
+        "name": "Le Van C",
+        "email": "levanc@gmail.com"
+            }
+        ]`;
+
+        console.log(jsonArray);
+        console.log(JSON.parse(jsonArray));
+
+        let listUser = JSON.parse(jsonArray);
+        let htmls = "";
+
+        listUser.forEach(element => {
+            // console.log(element);
+            htmls += `
+                <div class="user-element">
+                    <div class="inner-name">${element.name}</div>
+                    <div class="inner-email">${element.email}</div>
+                </div>`;
+        });
+        console.log(htmls);
+
+        const divListUser = document.querySelector("#listUser");
+        divListUser.innerHTML = htmls;
+
+
+        //VD6: JSON có giá trị là Null
+        let jsonNull = `null`;
+        console.log(jsonNull);
+        console.log(JSON.parse(jsonNull));
+    </script>
+</body>
+</html>
