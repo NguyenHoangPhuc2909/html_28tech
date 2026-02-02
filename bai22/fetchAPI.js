@@ -10,7 +10,7 @@ import { fetchAPI } from "./helpers/fetchapi.js";
 // }
 
 //Get Category
-fetchAPI("https://dummyjson.com/products/categories")
+fetchAPI("http://localhost:3000/categories")
     .then(data => {
         let htmls = "";
         data.forEach((item) => {
@@ -25,11 +25,11 @@ fetchAPI("https://dummyjson.com/products/categories")
 // //End Get Category
 
 // //Get Product
-fetchAPI("https://dummyjson.com/products")
+fetchAPI("http://localhost:3000/products")
     .then((data) => {
         // console.log(data.products);
         let htmls = "";
-        data.products.forEach((item) => {
+        data.forEach((item) => {
             htmls += `
                 <div class="product-item">
                     <img src="${item.thumbnail}" alt="${item.title}">
