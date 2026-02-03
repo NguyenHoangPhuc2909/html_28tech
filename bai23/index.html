@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="hoten" placeholder="Nhap ho ten" />
+    <button id="send">Gửi đi</button>
+    <button id="remove">Xoá</button>
+    <button id="removeAll">Xoá tất cả</button>
+    <button id="up">Tăng</button>
+    <button id="getKey">Lấy</button>
+
+    <div id="result"></div>
+    <script>
+      const input = document.querySelector("input");
+      const btnSend = document.querySelector("#send");
+      const btnRemove = document.querySelector("#remove");
+      const btnRemoveAll = document.querySelector("#removeAll");
+      const btnUp = document.querySelector("#up");
+      const btnKey = document.querySelector("#getKey");
+      const resultDiv = document.querySelector("#result");
+
+      btnSend.addEventListener("click", () => {
+        const value = input.value;
+        const name = input.name;
+
+        if (value) {
+            localStorage.setItem(name, value);
+            
+            const hoten = localStorage.getItem("hoten");
+            resultDiv.innerHTML = hoten;
+        }
+      });
+
+      btnRemove.addEventListener("click", () => {
+        localStorage.removeItem("hoten");
+        resultDiv.innerHTML = "";
+      });
+
+      let count = 0;
+
+      btnUp.addEventListener("click", () => {
+        localStorage.setItem(`key${count}`, `value${count}`);
+        count++;
+      });
+
+      btnRemoveAll.addEventListener("click", () => {
+        localStorage.clear();
+      });
+
+      btnKey.addEventListener("click", () => {
+        for(let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+
+            console.log(key, value);
+        }
+      })
+
+
+
+
+      sessionStorage.setItem("token", "feidsuidvsod");
+    </script>
+
+    <script src="closure.js"></script>
+  </body>
+</html>
