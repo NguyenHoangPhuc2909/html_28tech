@@ -250,7 +250,7 @@ Kết quả cuối cùng phụ thuộc vào giá trị của từng biểu thứ
     console.log(list.splice(2, 1, "Bootstrap 4", "ReactJS")); //Trả về ["Javascript"]
     console.log(list); //Trả về: ["HTML5", "CSS3", "Bootstrap 4", "ReactJS"]
 9.8 concat()
-    - Dùng để nối 2 array. Không làm ảnh hưởng đến mảng ban đầu\
+    - Dùng để nối 2 array. Không làm ảnh hưởng đến mảng ban đầu
     - Cú pháp: array1.concat(array2, array3,..,arrayX)
     - VD:
     var list = ["HTML5", "CSS3", "Javascript"];

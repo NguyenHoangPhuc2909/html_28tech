@@ -1,2 +1,4 @@
 *.txt
 database/
+*.json
+Learn-npm/
