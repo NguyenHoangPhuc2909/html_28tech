@@ -1,0 +1,205 @@
+.button--red {
+  background-color: gray;
+  color: #000;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.button--red {
+  background-color: #f83d3d;
+  color: #fff;
+}
+
+.button--green {
+  background-color: #02db02;
+  color: #fff;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.nav__item {
+  margin: 0 20px;
+}
+.nav__link {
+  text-decoration: none;
+  color: #424242;
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+}
+.nav__link--active {
+  color: #02db02;
+}
+.nav__link--disabled {
+  color: #ddd;
+  cursor: no-drop;
+}
+.nav__link:hover {
+  color: #f83d3d;
+}
+
+.pagination {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.pagination__item {
+  margin: 0 5px;
+}
+.pagination__link {
+  color: #424242;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.pagination__item--active .pagination__link {
+  color: #f83d3d;
+}
+.pagination__item--disable .pagination__link {
+  cursor: no-drop;
+  color: rgba(221, 221, 221, 0.8666666667);
+}
+.pagination__item--disable .pagination__link:hover {
+  color: #f83d3d;
+}
+
+.box {
+  position: relative;
+  background-color: orange;
+  width: 100%;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  height: 500px;
+}
+.box__item {
+  background-color: yellow;
+  width: 100px;
+  height: 50px;
+}
+.box__item--one {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+.box__item--two {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.box__item--three {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.box__item--four {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background-color: red;
+}
+
+.opactiy-0 {
+  opacity: 0;
+}
+
+.opactiy-1 {
+  opacity: 0.1;
+}
+
+.opactiy-2 {
+  opacity: 0.2;
+}
+
+.opactiy-3 {
+  opacity: 0.3;
+}
+
+.opactiy-4 {
+  opacity: 0.4;
+}
+
+.opactiy-5 {
+  opacity: 0.5;
+}
+
+.opactiy-6 {
+  opacity: 0.6;
+}
+
+.opactiy-7 {
+  opacity: 0.7;
+}
+
+.opactiy-8 {
+  opacity: 0.8;
+}
+
+.opactiy-9 {
+  opacity: 0.9;
+}
+
+.opactiy-10 {
+  opacity: 1;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #ddd;
+  color: #000;
+}
+
+.btn--blue {
+  background-color: #dadafa;
+  color: #fff;
+}
+
+.btn--red {
+  background-color: #e15b5b;
+  color: #000;
+}
+
+.btn--orange {
+  background-color: #f0af30;
+  color: #000;
+}
+
+.box__test {
+  width: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+@mixin display-flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex-wrap() {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin border-radius($value) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+}
+
+@mixin position-abs($positon, $x, $y) {
+    position: absolute;
+
+    @if($positon =="top-left") {
+        top: $x;
+        left: $y;
+    }
+
+    @else if($positon =="top-right") {
+        top: $x;
+        right: $y;
+    }
+
+    @else if($positon =="bottom-right") {
+        bottom: $x;
+        right: $y;
+    }
+
+    @else {
+        bottom: $x;
+        left: $y;
+    }
+}

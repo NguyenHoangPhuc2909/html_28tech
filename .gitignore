@@ -2,3 +2,4 @@
 database/
 *.json
 Learn-npm/
+**/node_modules/ 

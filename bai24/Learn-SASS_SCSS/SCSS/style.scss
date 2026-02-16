@@ -1,0 +1,164 @@
+@import "mixins";
+@import "variables";
+
+%button {
+    background-color: gray;
+    color: #000;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.button--red {
+    @extend %button;
+    background-color: $color-red;
+    color: $color-white;
+}
+
+.button--green {
+    background-color: $color-green;
+    color: $color-white;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @include display-flex();
+    @include flex-wrap();
+    flex-direction: column;
+
+    &__item {
+        margin: 0 20px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $color-gray;
+        display: inline-block;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+
+        &--active {
+            color: $color-green;
+        }
+
+        &--disabled {
+            color: #ddd;
+            cursor: no-drop;
+        }
+
+        &:hover {
+            color: $color-red;
+        }
+    }
+}
+
+
+.pagination {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include display-flex();
+    @include flex-wrap();
+
+    &__item {
+        margin: 0 5px;
+    }
+
+    &__link {
+        color: $color-gray;
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid #ddd;
+        padding: 6px 8px;
+        @include border-radius(8px);
+    }
+
+    &__item--active &__link {
+        color: $color-red;
+    }
+
+    &__item--disable &__link {
+        cursor: no-drop;
+        color: #dddd;
+
+        &:hover {
+            color: $color-red;
+        }
+    }
+}
+
+.box {
+    position: relative;
+    background-color: orange;
+    width: 100%;
+    @include border-radius(12px);
+    height: 500px;
+
+    &__item {
+        background-color: yellow;
+        width: 100px;
+        height: 50px;
+
+        &--one {
+            @include position-abs("top-left", 10px, 20px);
+        }
+
+        &--two {
+            @include position-abs("top-right", 20px, 20px);
+        }
+
+        &--three {
+            @include position-abs("bottom-right", 30px, 30px);
+        }
+
+        &--four {
+            @include position-abs("bottom-left", 40px, 40px);
+            background-color: red;
+        }
+    }
+}
+
+@for $ii from 0 through 10 {
+    .opactiy-#{$ii} {
+        opacity: 0.1 * $ii;
+    }
+}
+
+$i: 0;
+$length: 10;
+
+@while ($i <=$length) {
+    .mb-#{$i} {
+        margin-bottom: #{$i}px;
+    }
+
+    $i: $i + 5;
+}
+
+.btn {
+    background-color: #ddd;
+    color: #000;
+}
+
+$colors: (blue,#dadafa,#fff),
+    (red, #e15b5b, #000),
+    (orange, #f0af30, #000
+);
+
+@each $label, $bg, $color in $colors {
+    .btn--#{$label} {
+        background-color: $bg;
+        color: $color;
+    }
+}
+
+@function sum($a, $b) {
+    $c : $a + $b;
+    @return $c;
+}
+
+.box__test {
+    width: sum(10px, 20px);
+}
