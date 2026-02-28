@@ -3,3 +3,4 @@ database/
 *.json
 Learn-npm/
 **/node_modules/ 
+* text=auto eol=lf
