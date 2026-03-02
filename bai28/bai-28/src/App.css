@@ -1,0 +1,26 @@
+.Box {
+  background-color: #ddd;
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 30px;
+}
+
+.Box--active {
+  background-color: red;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .Box:nth-child(2) {
+  flex: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.input--active {
+  background-color: yellow;
+}
