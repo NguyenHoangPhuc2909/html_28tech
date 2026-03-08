@@ -1,0 +1,41 @@
+.modal {
+    background: #63636352;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__body {
+        background-color: #ffffff;
+        width: 80%;
+        padding: 15px;
+        border-radius: 8px;
+        position: relative;
+        
+    }
+
+    &__close {
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        width: 32px;
+        border-radius: 50%;
+        background-color: #ff0000;
+        color: #ffffff;
+        border: 0;
+        padding: 5px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__content {
+        font-size: 24px;
+        font-weight: 500;
+    }
+}

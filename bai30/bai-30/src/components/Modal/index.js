@@ -1,0 +1,32 @@
+import { useState } from "react";
+import "./Modal.scss";
+
+function Modal(){
+
+    const [showModal, setShowModal] = useState(true);
+
+    const handleShowModal = () => {
+        setShowModal(true);
+    }
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    }
+    return (
+        <>
+            <button onClick={handleShowModal}>Click</button>
+
+            {showModal && (
+                <div className="modal">
+                <div className="modal__body">
+                    <button className="modal__close" onClick={handleCloseModal}>X</button>
+                    <div className="modal__content">Noi dung...</div>
+                </div>
+            </div>
+            )}
+            
+        </>
+    )
+}
+
+export default Modal;
