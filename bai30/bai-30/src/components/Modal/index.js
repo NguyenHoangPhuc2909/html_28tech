@@ -3,7 +3,7 @@ import "./Modal.scss";
 
 function Modal(){
 
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
     const handleShowModal = () => {
         setShowModal(true);
