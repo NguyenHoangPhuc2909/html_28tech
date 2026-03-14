@@ -1,4 +1,5 @@
 import './App.css';
+import Counter from './components/Counter';
 import Layout from './components/Layout';
 import UseRef from './components/UseRef';
 import UseRef2 from './components/UseRef2';
@@ -15,6 +16,8 @@ function App() {
       <UseRef3/>
       <hr></hr>
       <UseRef4/>
+      <hr></hr>
+      <Counter/>
     </>
   );
 }
