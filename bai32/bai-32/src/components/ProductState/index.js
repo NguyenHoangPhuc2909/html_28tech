@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import './Product.css'
 
 function ProductState() {
   const [products, setProducts] = useState([]);
@@ -23,13 +26,27 @@ function ProductState() {
   return (
     <>
       {loading ? (
-        <> Dang tai du lieu... </>
+        <>
+          <div className="product__list">
+            {[...Array(6)].map((_, index) => (
+              <div className="product__item" key={index}>
+                <Skeleton className="product__image"/>
+                <Skeleton className="product__title"/>
+                <Skeleton className="product__image--circle"/>
+              </div>
+            ))}
+          </div>
+        </>
       ) : (
-        <ul>
+        <div className="product__list">
           {products.map(item => (
-            <li key={item.id}>{item.title}</li>
+            <div className="product__item" key={item.id}>
+              <img className="product__image" src={item.thumbnail} alt={item.title} />
+              <h3 className="product__title">{item.title}</h3>
+              <img className="product__image--circle" src={item.thumbnail} alt={item.title} />
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </>
   );
