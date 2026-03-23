@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
+import EditProduct from "./EditProduct";
+import DeleteProduct from "./DeleteProduct";
 
-function ProductList() {
+function ProductList(props) {
+  const { reload } = props;
   const [data, setData] = useState([]);
+  const [editReload, setEditReload] = useState(false);
+
+  const handleReload = () => {
+    setEditReload(!editReload);
+  }
 
   useEffect(() => {
     const fetchApi = async () => {
       fetch(`http://localhost:3001/products`)
         .then(response => response.json())
         .then(data => {
-          setData(data);
+          setData(data.reverse());
         })
     }
     fetchApi();
-  }, []);
+  }, [reload, editReload]);
 
   return (
     <>
@@ -25,8 +33,8 @@ function ProductList() {
             <h3 className="product__title">{item.title}</h3>
             <p className="product__price">${item.price}</p>
             <p className="product__discount">${item.discountPercentage}%</p>
-            <button>Edit</button>
-            <button>Delete</button>
+            <EditProduct item={item} onReload={handleReload} />
+            <DeleteProduct item={item} onReload={handleReload} />
           </div>
         ))}
       </div>

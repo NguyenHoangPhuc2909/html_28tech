@@ -3,10 +3,10 @@ import Modal from 'react-modal';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 
-function CreateProduct(props) {
-  const { onReload } = props;
+function EditProduct(props) {
+  const { item, onReload } = props;
   const [isShowModal, setShowModal] = useState(false);
-  const [data, setData] = useState({});
+  const [data, setData] = useState(item);
   const [dataCategory, setDataCategory] = useState([]);
 
   useEffect(() => {
@@ -15,13 +15,6 @@ function CreateProduct(props) {
         .then(response => response.json())
         .then(data => {
           setDataCategory(data);
-
-          if(data.length > 0) {
-            setData(prev => ({
-              ...prev,
-              category: data[0].slug
-            }));
-          }
         })
     }
     fetchApi();
@@ -48,6 +41,7 @@ function CreateProduct(props) {
   }
 
   const openModal = () => {
+    console.log(item);
     setShowModal(true);
   }
 
@@ -58,8 +52,8 @@ function CreateProduct(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:3001/products`, {
-      method: "POST",
+    fetch(`http://localhost:3001/products/${item.id}`, {
+      method: "PATCH",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
@@ -82,7 +76,7 @@ function CreateProduct(props) {
 
   return (
     <>
-      <button onClick={openModal}>+ Tạo sản phẩm mới</button>
+      <button onClick={openModal}>Edit</button>
 
       <Modal
         isOpen={isShowModal}
@@ -96,7 +90,7 @@ function CreateProduct(props) {
               <tr>
                 <td>Tiêu đề</td>
                 <td>
-                  <input type='text' name='title' onChange={handleChange} />
+                  <input value={data.title} type='text' name='title' onChange={handleChange} />
                 </td>
               </tr>
               {dataCategory.length > 0 && (
@@ -114,31 +108,31 @@ function CreateProduct(props) {
               <tr>
                 <td>Giá</td>
                 <td>
-                  <input type='text' name='price' onChange={handleChange} required />
+                  <input value={data.price} type='text' name='price' onChange={handleChange} required />
                 </td>
               </tr>
               <tr>
                 <td>Giảm giá</td>
                 <td>
-                  <input type='text' name='discountPercentage' onChange={handleChange} required />
+                  <input value={data.discountPercentage} type='text' name='discountPercentage' onChange={handleChange} required />
                 </td>
               </tr>
               <tr>
                 <td>Số lượng còn lại</td>
                 <td>
-                  <input type='number' name='stock' onChange={handleChange} required />
+                  <input value={data.stock} type='number' name='stock' onChange={handleChange} required />
                 </td>
               </tr>
               <tr>
                 <td>Đường dẫn ảnh</td>
                 <td>
-                  <input type='text' name='thumbnail' onChange={handleChange} required />
+                  <input value={data.thumbnail} type='text' name='thumbnail' onChange={handleChange} required />
                 </td>
               </tr>
               <tr>
                 <td>Mô tả</td>
                 <td>
-                  <textarea rows={4} name='description' onChange={handleChange}></textarea>
+                  <textarea value={data.description} rows={4} name='description' onChange={handleChange}></textarea>
                 </td>
               </tr>
               <tr>
@@ -146,7 +140,7 @@ function CreateProduct(props) {
                   <button onClick={closeModal}>Huỷ</button>
                 </td>
                 <td>
-                  <input type='submit' value='Tạo mới' />
+                  <input type='submit' value='Cập nhật' />
                 </td>
               </tr>
             </tbody>
@@ -157,4 +151,4 @@ function CreateProduct(props) {
   );
 }
 
-export default CreateProduct;
+export default EditProduct;
