@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import EditProduct from "./EditProduct";
 import DeleteProduct from "./DeleteProduct";
+import { getProductList } from "../../Services/productServices";
 
 function ProductList(props) {
   const { reload } = props;
@@ -13,11 +14,8 @@ function ProductList(props) {
 
   useEffect(() => {
     const fetchApi = async () => {
-      fetch(`http://localhost:3001/products`)
-        .then(response => response.json())
-        .then(data => {
-          setData(data.reverse());
-        })
+      const result = await getProductList();
+      setData(result.reverse());
     }
     fetchApi();
   }, [reload, editReload]);

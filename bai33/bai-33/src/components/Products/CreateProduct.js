@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import { getCategory } from '../../Services/categoryServices';
+import { createProduct } from '../../Services/productServices';
 
 function CreateProduct(props) {
   const { onReload } = props;
@@ -11,18 +13,15 @@ function CreateProduct(props) {
 
   useEffect(() => {
     const fetchApi = async () => {
-      fetch(`http://localhost:3001/categories`)
-        .then(response => response.json())
-        .then(data => {
-          setDataCategory(data);
+      const result = await getCategory();
+      setDataCategory(result);
 
-          if(data.length > 0) {
-            setData(prev => ({
-              ...prev,
-              category: data[0].slug
-            }));
-          }
-        })
+      if (result.length > 0) {
+        setData(prev => ({
+          ...prev,
+          category: result[0].slug
+        }));
+      }
     }
     fetchApi();
   }, []);
@@ -55,29 +54,18 @@ function CreateProduct(props) {
     setShowModal(false);
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    fetch(`http://localhost:3001/products`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data) {
-          closeModal();
-          onReload();
-          Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-          });
-        }
-      })
+    const result = await createProduct(data);
+    if (result) {
+      closeModal();
+      onReload();
+      Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success"
+      });
+    }
   };
 
   return (

@@ -1,8 +1,21 @@
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import { deleteProduct } from '../../Services/productServices';
 
 function DeleteProduct(props) {
   const { item, onReload } = props;
+
+  const deleteItem = async () => {
+    const result = await deleteProduct(item.id);
+    if (result) {
+      onReload();
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
+    }
+  }
   const handleDelete = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -14,18 +27,7 @@ function DeleteProduct(props) {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3001/products/${item.id}`, {
-          method: "DELETE",
-        })
-          .then(res => res.json())
-          .then(() => {
-            onReload();
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
-              icon: "success"
-            });
-          })
+        deleteItem();
       }
     });
   }
