@@ -1,16 +1,19 @@
-export const up = () => {
+export const up = (number) => {
     return {
-        type: "UP"
+        type: "UP",
+        number: number
     };
 }
-export const down = () => {
+export const down = (number) => {
     return {
-        type: "DOWN"
+        type: "DOWN",
+        number: number
     };
 }
-export const reset = () => {
+export const reset = (number) => {
     return {
-        type: "RESET"
+        type: "RESET",
+        number: number
     };
 }
 
