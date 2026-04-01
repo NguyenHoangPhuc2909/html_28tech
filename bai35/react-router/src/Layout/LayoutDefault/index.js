@@ -28,6 +28,9 @@ function LayoutDefault() {
                                     <li><NavLink className={navLinkActive} to="/blog/related">Blog Related</NavLink></li>
                                 </ul>
                             </li>
+                            <li>
+                                <NavLink className={navLinkActive} to="/info-user">Info User</NavLink>
+                            </li>
                         </ul>
                     </div>
                 </header>

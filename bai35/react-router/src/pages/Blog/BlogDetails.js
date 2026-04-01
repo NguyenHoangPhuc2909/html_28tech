@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { GrView } from "react-icons/gr";
+import GoBack from "../../components/GoBack";
 function BlogDetails() {
   const params = useParams();
   const [post, setPost] = useState();
@@ -14,9 +15,10 @@ function BlogDetails() {
         setPost(data);
       });
   }, []);
-  console.log(post);
+
   return (
     <>
+      <GoBack/>
       {post && (
         <>
           <h1>{post.title}</h1>
@@ -29,13 +31,10 @@ function BlogDetails() {
 
           <div>
             {post.body}
-            <div>
-              <span><BiLike /></span>
-              <span>{post.reactions.likes}</span>
-              <span><BiDislike /></span>
-              <span>{post.reactions.dislikes}</span>
-              <span><GrView /></span>
-              <span>{post.views}</span>
+            <div style={{display: "flex", gap: "12px"}}>
+              <span><BiLike /> {post.reactions.likes}</span>
+              <span><BiDislike />{post.reactions.dislikes}</span>
+              <span><GrView />{post.views}</span>
             </div>
           </div>
         </>
