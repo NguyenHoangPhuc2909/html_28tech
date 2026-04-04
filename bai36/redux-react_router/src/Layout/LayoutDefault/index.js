@@ -1,18 +1,20 @@
-import { NavLink, Outlet } from "react-router";
-import "../LayoutDefault/LayoutDefault.scss";
+import { Outlet } from "react-router";
+import "./LayoutDefault.scss";
+import CartMini from "../../components/CartMini";
+import Logo from "../../components/Logo";
 
 function LayoutDefault() {
     return (
         <>
             <div className="layout--default">
                 <header className="layout--default__header">
-                    <div className="layout-default__logo">
-                        <NavLink to="/">Logo</NavLink>
+                    <div className="layout--default__logo">
+                        <Logo />
                     </div>
                     <div className="cart">
                         <ul>
                             <li>
-                                <NavLink to="/cart">Cart</NavLink>
+                                <CartMini />
                             </li>
                         </ul>
                     </div>

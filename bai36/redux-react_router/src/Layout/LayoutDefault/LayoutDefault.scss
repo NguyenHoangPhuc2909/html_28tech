@@ -19,6 +19,16 @@
         text-align: center;
         padding: 10px 20px;
     }
+
+    &__logo {
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+            mix-blend-mode: multiply;
+        }
+    }
 }
 
 .cart {
@@ -31,6 +41,10 @@
         li {
             margin-left: 20px;
             position: relative;
+        }
+
+        a {
+            text-decoration: none;
         }
     }
 
