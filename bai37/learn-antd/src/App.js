@@ -1,24 +1,15 @@
-import { useState } from 'react';
-import './App.css';
-import { Button } from "antd";
+import { Typography } from "antd";
+import LearnButton from './components/LearnButton';
+import LearnGrid from "./components/LearnGrid";
+const { Title, Text } = Typography;
 
 function App() {
-  const [loading, setLoading] = useState(false);
-  const handleClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      const result = {
-        code: 200,
-        data: []
-      };
-      if (result && result.code === 200) {
-        setLoading(false);
-      }
-    }, 3000)
-  }
   return (
     <>
-      <Button type='dashed' loading={loading} onClick={handleClick} disabled={loading}>Nội dung</Button>
+      <LearnButton/>
+      <Title level={3}>h3. Ant Design</Title>
+      <Text code>Ant Design (code)</Text>
+      <LearnGrid/>
     </>
   );
 }
