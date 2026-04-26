@@ -1,5 +1,6 @@
 import { Layout } from "antd";
 import LearnGrid from "../../LearnGrid";
+import Notify from "../../Notify";
 import "../LayoutDefault/LayoutDefault.css";
 import { SearchOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import logo from "../../../images/logo.png";
@@ -24,7 +25,9 @@ function LayoutDefault(){
                             <SearchOutlined />
                         </div>
                     </div>
-                    <div className="header__nav-right">Noi dung</div>
+                    <div className="header__nav-right">
+                        <Notify/>
+                    </div>
                 </div>
             </header>
             <Layout>
