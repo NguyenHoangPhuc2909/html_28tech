@@ -1,11 +1,12 @@
 import { Layout } from "antd";
-import LearnGrid from "../../LearnGrid";
 import Notify from "../../Notify";
 import "../LayoutDefault/LayoutDefault.css";
 import { SearchOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import logo from "../../../images/logo.png";
 import logoFold from "../../../images/logo-fold.png";
 import { useState } from "react";
+import MenuSider from "../../MenuSider";
+import { Outlet } from "react-router-dom";
 const { Footer, Sider, Content } = Layout;
 function LayoutDefault(){
     const [collapsed, setCollapsed] = useState(false);
@@ -31,8 +32,8 @@ function LayoutDefault(){
                 </div>
             </header>
             <Layout>
-                <Sider className="sider" collapsed={collapsed} theme="light">sider</Sider>
-                <Content className="content"><LearnGrid/></Content>
+                <Sider className="sider" collapsed={collapsed} theme="light"><MenuSider/></Sider>
+                <Content className="content"><Outlet/></Content>
             </Layout>
             <Footer className="footer">footer</Footer>
         </Layout>
