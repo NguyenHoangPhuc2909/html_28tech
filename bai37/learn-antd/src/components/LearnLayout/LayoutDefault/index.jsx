@@ -7,9 +7,10 @@ import logoFold from "../../../images/logo-fold.png";
 import { useState } from "react";
 import MenuSider from "../../MenuSider";
 import { Outlet } from "react-router-dom";
-const { Footer, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 function LayoutDefault(){
     const [collapsed, setCollapsed] = useState(false);
+    const currentYear = new Date().getFullYear();
     return (
         <>
         <Layout className="layout-default">
@@ -35,7 +36,7 @@ function LayoutDefault(){
                 <Sider className="sider" collapsed={collapsed} theme="light"><MenuSider/></Sider>
                 <Content className="content"><Outlet/></Content>
             </Layout>
-            <Footer className="footer">footer</Footer>
+            <footer className="footer"><p>Ant Design ©{currentYear} Created by Ant UED</p></footer>
         </Layout>
         </>
     )
