@@ -1,10 +1,30 @@
-import { Space, Input, Row, Col, Button, Checkbox } from "antd";
+import { Select, DatePicker, Space, Input, Row, Col, Button, Checkbox, Radio } from "antd";
 import { useState } from "react";
+import { postBookRoom } from "../../Services/bookRoomServices";
+const { RangePicker } = DatePicker;
 export default function BookRoom() {
-  const [data, setData] = useState({});
-  const handleSubmit = (e) => {
+  const [data, setData] = useState({
+    time: "14 giờ",
+    gifts: "Áo thun"
+  });
+
+  const optionTimes = [];
+  for (let i = 7; i <= 24; i++) {
+    optionTimes.push({
+      value: i > 9 ? `${i} giờ` : `0${i} giờ`,
+      labe: i > 9 ? `${i} giờ` : `0${i} giờ`
+    });
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Submit to json-server`, data);
+    const response = await postBookRoom(data);
+    if(response){
+      alert(`Chúc mừng bạn đã đặt phòng thành công!`);
+    }
+    else{
+      alert(`Hệ thống đang bận. Vui lòng thử lại sau!`);
+    }
   }
 
   const handleChangeCheckbox = (e) => {
@@ -19,6 +39,30 @@ export default function BookRoom() {
     const object = {
       ...data,
       [e.target.name]: e.target.value
+    };
+    setData(object);
+  }
+
+  const handleDate = (dates, dateStrings) => {
+    const object = {
+      ...data,
+      date: dateStrings
+    };
+    setData(object);
+  }
+
+  const handleRadio = (e) => {
+    const object = {
+      ...data,
+      [e.target.name]: e.target.value
+    };
+    setData(object);
+  }
+
+  const handleChangeSelect = (e) => {
+    const object = {
+      ...data,
+      time: e
     };
     setData(object);
   }
@@ -50,6 +94,26 @@ export default function BookRoom() {
               <Checkbox value="Thuê xe đạp">Thuê xe đạp</Checkbox>
             </Space>
           </Checkbox.Group>
+        </Col>
+        <Col span={12}>
+          <p>Quà tặng</p>
+          <Radio.Group name="gifts" onChange={handleRadio} defaultValue={data.gifts}>
+            <Space>
+              <Radio value="Áo thun">Áo thun</Radio>
+              <Radio value="Áo sơ mi">Áo sơ mi</Radio>
+              <Radio value="Quần tây">Quần tây</Radio>
+              <Radio value="Mũ lưỡi trai">Mũ lưỡi trai</Radio>
+            </Space>
+          </Radio.Group>
+        </Col>
+        <Col span={12}>
+          <p>Chọn ngày</p>
+          <RangePicker format={"DD-MM-YYYY"} onChange={handleDate} placeholder={["Nhận phòng", "Trả phòng"]} />
+        </Col>
+
+        <Col span={12}>
+          <p>Giờ nhận phòng</p>
+          <Select onChange={handleChangeSelect} defaultValue={data.time} options={optionTimes} style={{ width: '100px' }} />
         </Col>
         <Col xxl={12} xl={12} lg={12} md={12} sm={24} xs={24}>
           <Button type="primary" onClick={handleSubmit}>Đặt phòng</Button>
