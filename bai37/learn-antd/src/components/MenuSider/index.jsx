@@ -97,7 +97,7 @@ function MenuSider() {
       icon: <HomeOutlined />
     },
     {
-      label: <Link to={"/create-room"}>Book room</Link>,
+      label: <Link to={"/create-room"}>Create room</Link>,
       key: "/create-room",
       icon: <PlusCircleOutlined />
     },

@@ -80,8 +80,13 @@ export default function CreateRoom() {
             </Form.Item>
           </Col>
           <Col xxl={8} xl={8} lg={8} md={8} sm={24} xs={24}>
-            <Form.Item valuePropName="checked" name="status" label="Trạng thái">
-              <Switch defaultChecked />
+            <Form.Item initialValue={true} valuePropName="checked" name="status" label="Trạng thái">
+              <Switch checkedChildren="Còn phòng" unCheckedChildren="Hết phòng"/>
+            </Form.Item>
+          </Col>
+          <Col xxl={8} xl={8} lg={8} md={8} sm={24} xs={24}>
+            <Form.Item initialValue={true} valuePropName="checked" name="type" label="Loại phòng">
+              <Switch checkedChildren="Phòng VIP" unCheckedChildren="Phòng thường"/>
             </Form.Item>
           </Col>
         </Row>
