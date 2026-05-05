@@ -1,39 +1,42 @@
 import { useEffect, useState } from "react"
 import { getListRoom } from "../../Services/roomServices";
-import { Badge, Card, Col, Row } from "antd";
+import { Button } from "antd";
+import { OrderedListOutlined, AppstoreOutlined } from "@ant-design/icons";
+import RoomGrid from "./RoomGrid";
+import RoomList from "./RoomList";
 
 export default function ListRoom() {
   const [room, setRoom] = useState([]);
+  const [isGrid, setIsGrid] = useState(true);
+
+  const fetchApi = async () => {
+    const response = await getListRoom();
+    setRoom(response);
+  }
 
   useEffect(() => {
-    const fetchApi = async () => {
-      const response = await getListRoom();
-      setRoom(response);
-    }
     fetchApi();
   }, []);
+
+  const handleReload = () => {
+    fetchApi();
+  }
 
   console.log(room);
 
   return (
     <>
-      <Row gutter={[20, 20]}>
-        {room.map(item => (
-          <Col key={item.id} xxl={12} xl={12} lg={12} md={12} sm={24} xs={24}>
-            <Badge.Ribbon text={item.type ? "VIP" : "Thường"} color={item.type ? "red" : "blue"}>
-              <Card title={item.roomName}>
-                <p>Số giường: <b>{item.quantityBed}</b></p>
-                <p>Số người: <b>{item.quantityPeople}</b></p>
-                <p>
-                  {item.status ?
-                    (<Badge status="success" text="Còn phòng"></Badge>)
-                    : (<Badge status="error" text="Hết phòng"></Badge>)}
-                </p>
-              </Card>
-            </Badge.Ribbon>
-          </Col>
-        ))}
-      </Row>
+      <Button onClick={() => setIsGrid(false)}>
+        <OrderedListOutlined />
+      </Button>
+      <Button onClick={() => setIsGrid(true)}>
+        <AppstoreOutlined />
+      </Button>
+      {isGrid ? (<>
+        <RoomGrid rooms={room} />
+      </>) : (<>
+        <RoomList rooms={room} onReload={handleReload} />
+      </>)}
     </>
   )
 }

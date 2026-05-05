@@ -1,6 +1,7 @@
-import { Row, Col, Carousel, Collapse } from "antd";
+import { Row, Col, Collapse, Image, Tabs } from "antd";
 import "./learngrid.css";
 import CartItem from "../CartItem";
+import Slide from "./Slide";
 const { Panel } = Collapse;
 function LearnGrid() {
   const list = [
@@ -18,6 +19,24 @@ function LearnGrid() {
       id: 3,
       title: "Logo là gì?",
       description: "Logo 3 là ....."
+    }
+  ];
+
+  const items = [
+    {
+      key: 1, 
+      label: "Tab 1",
+      children: <><Slide/></>
+    },
+    {
+      key: 2, 
+      label: "Tab 2",
+      children: `Nội dung của Tab 2`
+    },
+    {
+      key: 3, 
+      label: "Tab 3",
+      children: `Nội dung của Tab 3`
     }
   ]
   return (
@@ -82,13 +101,6 @@ function LearnGrid() {
         </Col>
       </Row>
 
-      <Carousel autoplay dots={true} effect="scrollx">
-        <div className="slider-item">1</div>
-        <div className="slider-item">2</div>
-        <div className="slider-item">3</div>
-        <div className="slider-item">4</div>
-      </Carousel>
-
       <Collapse defaultActiveKey={"1"} accordion>
         {list.map(item => (
           <Panel header={item.title} key={item.id}>
@@ -96,6 +108,10 @@ function LearnGrid() {
           </Panel>
         ))}
       </Collapse>
+
+      <Image width={200} src="https://www.jaypeehotels.com/blog/wp-content/uploads/2024/09/Blog-6-scaled.jpg" preview={true} alt="room"/>
+
+      <Tabs items={items}/>
     </>
   );
 }
