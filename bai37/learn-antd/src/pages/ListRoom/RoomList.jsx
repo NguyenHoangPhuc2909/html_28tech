@@ -1,4 +1,4 @@
-import { Badge, Table } from "antd";
+import { Tag, Badge, Table, Tooltip } from "antd";
 import DeleteRoom from "./DeleteRoom";
 
 export default function RoomList(props) {
@@ -26,7 +26,15 @@ export default function RoomList(props) {
       render: (_, record) => {
         console.log(record.status);
         return <>
-          {record.status ? (<Badge color="blue" text="Còn phòng" />) : (<Badge color="red" text="Hết phòng" />)}
+          {record.status ? (<>
+            <Tooltip title="Đặt ngay đi">
+              <Badge color="blue" text="Còn phòng" />
+            </Tooltip>
+          </>) : (<>
+            <Tooltip title="Hẹn lần sau">
+              <Badge color="red" text="Hết phòng" />
+            </Tooltip>
+          </>)}
         </>
       }
     },
@@ -37,7 +45,16 @@ export default function RoomList(props) {
       render: (_, record) => {
         console.log(record.type);
         return <>
-          {record.type ? (<Badge color="green" text="VIP" />) : (<Badge color="purple" text="Thường" />)}
+          {record.type ?
+            (<>
+              <Tooltip title="Phòng VIP chuẩn 5 sao">
+                <Tag color={"green-inverse"}>VIP</Tag>
+              </Tooltip>
+            </>) : (<>
+              <Tooltip title="Phòng thường chuẩn 3 sao">
+                <Tag color={"purple-inverse"}>Thường</Tag>
+              </Tooltip>
+            </>)}
         </>
       }
     },
@@ -47,7 +64,7 @@ export default function RoomList(props) {
       render: (_, record) => {
         console.log(record.type);
         return <>
-          <DeleteRoom onReload={onReload} record={record}/>
+          <DeleteRoom onReload={onReload} record={record} />
         </>
       }
     }
