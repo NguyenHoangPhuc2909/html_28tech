@@ -1,5 +1,6 @@
 import { Row, Col, Switch, Select, Form, Input, Button, InputNumber, message } from "antd";
 import { createRoom } from "../../Services/roomServices";
+import { Option } from "antd/es/mentions";
 
 export default function CreateRoom() {
   const [form] = Form.useForm();
@@ -11,14 +12,14 @@ export default function CreateRoom() {
     if (response) {
       form.resetFields();
       messageApi.open({
-        type:`success`,
+        type: `success`,
         content: `Tạo phòng mới thành công`,
         duration: 3
       });
     }
     else {
       messageApi.open({
-        type:`error`,
+        type: `error`,
         content: `Tạo phòng mới không thành công`
       });
     }
@@ -78,18 +79,17 @@ export default function CreateRoom() {
             <Form.Item
               name="utils"
               label="Tiện ích"
+              initialValue={['Wifi']}
             >
               <Select
                 placeholder="Vui lòng chọn tiện ích"
-                defaultValue={['01']}
                 mode="multiple"
                 allowClear
-                options={[
-                  { label: 'Wifi', value: '01' },
-                  { label: 'Nóng lạnh', value: '02' },
-                  { label: 'Điều hoà', value: '03' },
-                ]}
-              />
+              >
+                <Option value="Wifi">Wifi</Option>
+                <Option value="Nóng lạnh">Nóng lạnh</Option>
+                <Option value="Điều hoà">Điều hoà</Option>
+              </Select>
             </Form.Item>
           </Col>
           <Col xxl={8} xl={8} lg={8} md={8} sm={24} xs={24}>

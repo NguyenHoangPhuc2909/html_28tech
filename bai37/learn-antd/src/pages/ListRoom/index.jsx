@@ -11,7 +11,7 @@ export default function ListRoom() {
 
   const fetchApi = async () => {
     const response = await getListRoom();
-    setRoom(response);
+    setRoom(response.reverse());
   }
 
   useEffect(() => {

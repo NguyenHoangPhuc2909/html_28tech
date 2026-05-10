@@ -1,4 +1,4 @@
-import { del, get, post } from "../utils/request"
+import { del, get, post, patch } from "../utils/request"
 
 export const createRoom = async (options) => {
   const result = await post("rooms", options);
@@ -12,5 +12,10 @@ export const getListRoom = async () => {
 
 export const  deleteRoom = async(id) => {
   const result = await del(`rooms/${id}`);
+  return result;
+}
+
+export const editRoom = async (id, options) => {
+  const result = await patch(`rooms/${id}`, options);
   return result;
 }

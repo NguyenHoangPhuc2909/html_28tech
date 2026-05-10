@@ -1,5 +1,6 @@
 import { Tag, Badge, Table, Tooltip } from "antd";
 import DeleteRoom from "./DeleteRoom";
+import EditRoom from "./EditRoom";
 
 export default function RoomList(props) {
   const { rooms, onReload } = props;
@@ -65,6 +66,7 @@ export default function RoomList(props) {
         console.log(record.type);
         return <>
           <DeleteRoom onReload={onReload} record={record} />
+          <EditRoom onReload={onReload} record={record}/>
         </>
       }
     }
