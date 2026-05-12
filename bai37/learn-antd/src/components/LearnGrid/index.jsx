@@ -1,4 +1,4 @@
-import { Row, Col, Collapse, Image, Tabs } from "antd";
+import { Row, Col, Collapse, Image, Tabs, QRCode, Rate } from "antd";
 import "./learngrid.css";
 import CartItem from "../CartItem";
 import Slide from "./Slide";
@@ -24,17 +24,17 @@ function LearnGrid() {
 
   const items = [
     {
-      key: 1, 
+      key: 1,
       label: "Tab 1",
-      children: <><Slide/></>
+      children: <><Slide /></>
     },
     {
-      key: 2, 
+      key: 2,
       label: "Tab 2",
       children: `Nội dung của Tab 2`
     },
     {
-      key: 3, 
+      key: 3,
       label: "Tab 3",
       children: `Nội dung của Tab 3`
     }
@@ -109,9 +109,15 @@ function LearnGrid() {
         ))}
       </Collapse>
 
-      <Image width={200} src="https://www.jaypeehotels.com/blog/wp-content/uploads/2024/09/Blog-6-scaled.jpg" preview={true} alt="room"/>
-
-      <Tabs items={items}/>
+      <Image width={200} src="https://www.jaypeehotels.com/blog/wp-content/uploads/2024/09/Blog-6-scaled.jpg" preview={true} alt="room" />
+      <QRCode errorLevel="M" value="https://ant.design/" icon="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" />
+      <Rate allowClear allowHalf defaultValue={1.5} tooltips={['terrible',
+        'bad',
+        'normal',
+        'good',
+        'wonderful']} onChange={(e) =>console.log(e)
+        }/>
+      <Tabs items={items} />
     </>
   );
 }
